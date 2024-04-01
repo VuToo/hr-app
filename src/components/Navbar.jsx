@@ -1,15 +1,16 @@
 import React from 'react';
-import "../assets/css/style.css";
+// import "../assets/css/style.css";
+
 
 function Navbar() {
   return (
     <>
-        <div className="container-fluid">
+        <div className="container-fluid sticky-top bg-light">
             <div className="row border-top px-xl-5">
                 <div className="col-lg-3 d-none d-lg-block">
-                    <a className="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none" data-toggle="collapse" href="#navbar-vertical" style={{height: '67px', padding: '0 30px'}}>
+                    <a className="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none" href="/home" style={{height: '67px', padding: '0 30px'}}>
                         <h5 className="text-primary m-0"><i className="fa fa-book-open mr-2"></i>V-Talent Solution</h5>
-                        <i className="fa fa-angle-down text-primary"></i>
+                        {/* <i className="fa fa-angle-down text-primary"></i> */}
                     </a>
                     {/* <nav className="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style={{width:'calc(100% - 30px)', zIndex: '9'}}>
                         <div className="navbar-nav w-100">
@@ -38,18 +39,21 @@ function Navbar() {
                         </button>
                         <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div className="navbar-nav py-0">
-                                <a href="index.html" className="nav-item nav-link active">Home</a>
-                                <a href="about.html" className="nav-item nav-link">About</a>
+                                <a href="/home" className="nav-item nav-link">Home</a>
+                                <a href="/about" className="nav-item nav-link">About</a>
                                 {/* <a href="course.html" className="nav-item nav-link">Courses</a>
                                 <a href="teacher.html" className="nav-item nav-link">Teachers</a> */}
                                 <div className="nav-item dropdown">
-                                    <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
-                                    <div className="dropdown-menu rounded-0 m-0">
-                                        <a href="blog.html" className="dropdown-item">Blog List</a>
-                                        <a href="single.html" className="dropdown-item">Blog Detail</a>
+                                    <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Service</a>
+                                    <div className="dropdown-menu rounded-0 m-0 p-0">
+                                        <a href="blog.html" className="dropdown-item p-2">HR Consulting</a>
+                                        <a href="single.html" className="dropdown-item p-2">IT Technology</a>
+                                        <a href="single.html" className="dropdown-item p-2">Outsourcing</a>
                                     </div>
                                 </div>
-                                <a href="contact.html" className="nav-item nav-link">Contact</a>
+                                <a href="/search-job" className="nav-item nav-link">Career Opportunities</a>
+                                <a href="/contact" className="nav-item nav-link">Contact</a>
+                                <a href="/news" className="nav-item nav-link">News</a>
                             </div>
                             <a className="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="">Submit CV</a>
                         </div>

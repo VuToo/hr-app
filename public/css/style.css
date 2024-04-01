@@ -3216,6 +3216,9 @@ input[type="button"].btn-block {
   color: #16181b;
   text-decoration: none;
   background-color: #f8f9fa;
+  color: #FF6600;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -9522,6 +9525,10 @@ button.bg-dark:focus {
 
 .text-white {
   color: #fff !important;
+}
+
+.text-yellow {
+  color: yellow !important;
 }
 
 .text-primary {
