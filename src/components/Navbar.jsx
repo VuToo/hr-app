@@ -52,8 +52,8 @@ function Navbar() {
                                     </div>
                                 </div>
                                 <a href="/search-job" className="nav-item nav-link">Career Opportunities</a>
-                                <a href="/contact" className="nav-item nav-link">Contact</a>
                                 <a href="/news" className="nav-item nav-link">News</a>
+                                <a href="/contact" className="nav-item nav-link">Contact</a>
                             </div>
                             <a className="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="">Submit CV</a>
                         </div>

@@ -9963,3 +9963,23 @@ h6,
   padding: 0;
   list-style-type: none;
 }
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #fafafa;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background-image: linear-gradient(-45deg, #6a5af9, #d66efd); */
+  background-color: #b0b0b0;
+  border-radius: 50px;
+}
