@@ -4,6 +4,7 @@ import AboutUs from "./pages/AboutUs";
 import CarrerOpportunities from "./pages/CarrerOpportunities";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import SubmitCV from "./pages/SubmitCV";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/search-job" element={<CarrerOpportunities/>} />
           <Route path="/news" element={<Blog/>} />
           <Route path="/contact" element={<Contact/>} />
+          <Route path="/uploadcv" element={<SubmitCV/>} />
           
           
         </Routes>

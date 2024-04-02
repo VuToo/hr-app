@@ -4,7 +4,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackTop from '../components/BackTop';
 
-function Contact() {
+
+function SubmitCV() {
     return (
     <>
         <Topbar/>
@@ -13,17 +14,12 @@ function Contact() {
         <div class="container-fluid page-header" style={{marginBottom: '30px'}}>
             <div class="container">
                 <div class="d-flex flex-column justify-content-center" style={{minHeight: "150px"}}>
-                    <h3 class="display-4 text-white text-uppercase">Contact</h3>
-                    <div class="d-inline-flex text-white">
-                        <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
-                        <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                        <p class="m-0 text-uppercase">Contact</p>
-                    </div>
+                    <h3 class="display-4 text-white text-uppercase text-center">SUBMIT YOUR CV</h3>
                 </div>
             </div>
         </div>
         {/* <!-- Header End --> */}
-        <div class="container-fluid py-5">
+        <div class="container-fluid py-5 my-3">
             <div class="container">
                 <div class="row">
                     {/* <div class="col-lg-5">
@@ -52,7 +48,7 @@ function Contact() {
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="control-group">
-                                            <input type="text" class="form-control border-0 p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter your subject" />
+                                            <input type="text" class="form-control border-0 p-4" id="recent-job" placeholder="Recent job" required="required" data-validation-required-message="Please enter recent job" />
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="control-group">
@@ -77,4 +73,4 @@ function Contact() {
     )
 }
 
-export default Contact
+export default SubmitCV
