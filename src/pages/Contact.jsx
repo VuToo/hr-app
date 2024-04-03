@@ -23,7 +23,8 @@ function Contact() {
             </div>
         </div>
         {/* <!-- Header End --> */}
-        <div className="container-fluid py-5">
+        
+        {/* <div className="container-fluid py-5">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-4">
@@ -79,9 +80,75 @@ function Contact() {
                     </div>
                 </div>
             </div>
+        </div> */}
+
+        <div className="container-fluid bg-registration py-5" style={{margin: "90px 0"}}>
+            <div className="container py-5">
+                <div className="row align-items-center">
+                    <div className="col-lg-4 mb-5 mb-lg-0">
+                        <div className="mb-4">
+                            <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: "5px"}}>GET IN TOUCH</h5>
+                            <h1 className="text-white">V-TALENT SOLUTION</h1>
+                        </div>
+                        <p className='text-white'><i className="fa fa-map-marker-alt text-primary mr-2"></i>123 Street, Quận 1, Thành Phố Hồ CHí Minh</p>
+                        <p className='text-white'><i className="fa fa-phone-alt text-primary mr-2"></i>+012 345 67890</p>
+                        <p className='text-white'><i className="fa fa-envelope text-primary mr-2"></i>info@example.com</p>
+                        
+                        <ul className="list-inline text-white m-0">
+                            <li className="py-2"><i className="fa fa-check text-primary mr-3"></i>Labore eos amet dolor amet diam</li>
+                            <li className="py-2"><i className="fa fa-check text-primary mr-3"></i>Etsea et sit dolor amet ipsum</li>
+                            <li className="py-2"><i className="fa fa-check text-primary mr-3"></i>Diam dolor diam elitripsum vero.</li>
+                        </ul>
+                        <div className="d-flex justify-content-start mt-4">
+                            <a className="btn btn-outline-primary btn-square mr-2" href="#"><i className="fab fa-twitter"></i></a>
+                            <a className="btn btn-outline-primary btn-square mr-2" href="#"><i className="fab fa-facebook-f"></i></a>
+                            <a className="btn btn-outline-primary btn-square mr-2" href="#"><i className="fab fa-linkedin-in"></i></a>
+                            <a className="btn btn-outline-primary btn-square" href="#"><i className="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div className="col-lg-8">
+                        <div className="card border-0">
+                            <div className="text-center mb-5">
+                                <h5 className="text-primary text-uppercase my-3" style={{letterSpacing: "5px"}}>Contact</h5>
+                                <h1>Contact For Any Query</h1>
+                            </div>
+                            <div className="row justify-content-center">
+                                <div className="col-lg-12">
+                                    <div className="contact-form bg-secondary rounded p-5">
+                                        <div id="success"></div>
+                                        <form name="sentMessage" id="contactForm" noValidate="novalidate">
+                                            <div className="control-group">
+                                                <input type="text" className="form-control border-0 p-4" id="name"  placeholder="Full Name" required data-validation-required-message="Please enter your name" />
+                                                <p className="help-block text-danger"></p>
+                                            </div>
+                                            <div className="control-group">
+                                                <input type="email" className="form-control border-0 p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                                <p className="help-block text-danger"></p>
+                                            </div>
+                                            <div className="control-group">
+                                                <input type="text" className="form-control border-0 p-4" id="phone" placeholder="Your Phone" required="required" data-validation-required-message="Please enter your phone" />
+                                                <p className="help-block text-danger"></p>
+                                            </div>
+                                            <div className="control-group">
+                                                <input type="text" className="form-control border-0 p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter your subject" />
+                                                <p className="help-block text-danger"></p>
+                                            </div>
+                                            <div className="control-group">
+                                                <textarea className="form-control border-0 py-3 px-4" rows="5" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                                <p className="help-block text-danger"></p>
+                                            </div>
+                                            <div className="text-center">
+                                                <button className="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Send Message</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
         <Footer/>
         <BackTop/>
     </>
