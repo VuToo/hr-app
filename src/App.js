@@ -5,6 +5,7 @@ import CarrerOpportunities from "./pages/CarrerOpportunities";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import SubmitCV from "./pages/SubmitCV";
+import TermsOfUse from "./pages/TermsOfUse";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/news" element={<Blog/>} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/uploadcv" element={<SubmitCV/>} />
+          <Route path="/terms-of-use" element={<TermsOfUse/>} />
           
           
         </Routes>

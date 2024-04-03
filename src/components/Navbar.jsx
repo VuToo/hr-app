@@ -55,7 +55,7 @@ function Navbar() {
                                 <a href="/news" className="nav-item nav-link">News</a>
                                 <a href="/contact" className="nav-item nav-link">Contact</a>
                             </div>
-                            <a className="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="/uploadcv">Submit CV</a>
+                            <a className="btn btn-primary py-2 px-4 ml-auto d-lg-block" href="/uploadcv">Submit CV</a>
                         </div>
                     </nav>
                 </div>

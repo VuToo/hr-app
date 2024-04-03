@@ -11,7 +11,7 @@ function Carousel() {
                     <li data-target="#header-carousel" data-slide-to="2"></li>
                 </ol>
                 <div className="carousel-inner">
-                    <div className="carousel-item active" style={{minHeight: '300px'}}>
+                    <div className="carousel-item active" style={{maxHeight: '600px'}}>
                         <img className="position-relative w-100" src="img/carousel-05.jpg" style={{minHeight: '300px', objectFit: 'cover'}}/>
                         <div className="carousel-caption d-flex align-items-center justify-content-center">
                             <div className="p-5" style={{width: '100%', maxWidth: '900px'}}>
@@ -21,7 +21,7 @@ function Carousel() {
                             </div>
                         </div>
                     </div>
-                    <div className="carousel-item" style={{minHeight: '300px'}}>
+                    <div className="carousel-item" style={{maxHeight: '600px'}}>
                         <img className="position-relative w-100" src="img/carousel-04.jpg" style={{minHeight: '300px', objectFit: 'cover'}}/>
                         <div className="carousel-caption d-flex align-items-center justify-content-center">
                             <div className="p-5" style={{width: '100%', maxWidth: '900px'}}>
@@ -31,7 +31,7 @@ function Carousel() {
                             </div>
                         </div>
                     </div>
-                    <div className="carousel-item" style={{minHeight: '300px'}}>
+                    <div className="carousel-item" style={{maxHeight: '600px'}}>
                         <img className="position-relative w-100" src="img/carousel-05.jpg" style={{minHeight: '300px', objectFit: 'cover'}}/>
                         <div className="carousel-caption d-flex align-items-center justify-content-center">
                             <div className="p-5" style={{width: '100%', maxWidth: '900px'}}>

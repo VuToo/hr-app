@@ -15,7 +15,7 @@ function Contact() {
                 <div class="d-flex flex-column justify-content-center" style={{minHeight: "150px"}}>
                     <h3 class="display-4 text-white text-uppercase">Contact</h3>
                     <div class="d-inline-flex text-white">
-                        <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                        <p class="m-0 text-uppercase"><a class="text-white" href="/home">Home</a></p>
                         <i class="fa fa-angle-double-right pt-1 px-3"></i>
                         <p class="m-0 text-uppercase">Contact</p>
                     </div>
@@ -26,16 +26,25 @@ function Contact() {
         <div class="container-fluid py-5">
             <div class="container">
                 <div class="row">
-                    {/* <div class="col-lg-5">
-
-                    </div> */}
-                    <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <h5 class="text-primary text-uppercase mb-4" style={{letterSpacing: "5px"}}>Get In Touch</h5>
+                        <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, Quận 1, Thành Phố Hồ CHí Minh</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                        <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                        <div class="d-flex justify-content-start mt-4">
+                            <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
                         <div class="text-center mb-5">
                             <h5 class="text-primary text-uppercase mb-3" style={{letterSpacing: "5px"}}>Contact</h5>
                             <h1>Contact For Any Query</h1>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="col-lg-8">
+                            <div class="col-lg-12">
                                 <div class="contact-form bg-secondary rounded p-5">
                                     <div id="success"></div>
                                     <form name="sentMessage" id="contactForm" novalidate="novalidate">
