@@ -15,7 +15,7 @@ function Blog() {
                 <div class="d-flex flex-column justify-content-center" style={{minHeight: "150px"}}>
                     <h3 class="display-4 text-white text-uppercase">Blog</h3>
                     <div class="d-inline-flex text-white">
-                        <p class="m-0 text-uppercase"><a class="text-white" href="/home">Home</a></p>
+                        <p class="m-0 text-uppercase"><a class="text-white" href="/">Home</a></p>
                         <i class="fa fa-angle-double-right pt-1 px-3"></i>
                         <p class="m-0 text-uppercase">Blog</p>
                     </div>

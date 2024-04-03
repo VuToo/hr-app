@@ -17,7 +17,7 @@ function Carousel() {
                             <div className="p-5" style={{width: '100%', maxWidth: '900px'}}>
                                 <h5 className="text-white text-uppercase mb-md-3">V-Talent Solution</h5>
                                 <h1 className="display-3 text-white mb-md-4">Best Consulting Services and Solutions</h1>
-                                <a href="#contact" className="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Contact Us</a>
+                                <a href="/contact" className="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Contact Us</a>
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@ function Carousel() {
                             <div className="p-5" style={{width: '100%', maxWidth: '900px'}}>
                                 <h5 className="text-white text-uppercase mb-md-3">Faster - Smarter</h5>
                                 <h1 className="display-3 text-white mb-md-4">NOW HIRING</h1>
-                                <a href="#contact" className="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Contact Us</a>
+                                <a href="/uploadcv" className="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Submit CV</a>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@ function Carousel() {
                             <div className="p-5" style={{width: '100%', maxWidth: '900px'}}>
                                 <h5 className="text-white text-uppercase mb-md-3">V-Talent Solution</h5>
                                 <h1 className="display-3 text-white mb-md-4">New Way To Find Your Job</h1>
-                                <a href="#contact" className="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Contact Us</a>
+                                <a href="/contact" className="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Contact Us</a>
                             </div>
                         </div>
                     </div>

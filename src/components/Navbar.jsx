@@ -8,7 +8,7 @@ function Navbar() {
         <div className="container-fluid sticky-top bg-light">
             <div className="row border-top px-xl-5">
                 <div className="col-lg-3 d-none d-lg-block">
-                    <a className="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none" href="/home" style={{height: '67px', padding: '0 30px'}}>
+                    <a className="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none" href="/" style={{height: '67px', padding: '0 30px'}}>
                         <h5 className="text-primary m-0"><i className="fa fa-book-open mr-2"></i>V-Talent Solution</h5>
                         {/* <i className="fa fa-angle-down text-primary"></i> */}
                     </a>
@@ -31,7 +31,7 @@ function Navbar() {
                 </div>
                 <div className="col-lg-9">
                     <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                        <a href="" className="text-decoration-none d-block d-lg-none">
+                        <a href="/" className="text-decoration-none d-block d-lg-none">
                             <h1 className="m-0"><span className="text-primary">V </span>TALENT</h1>
                         </a>
                         <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -39,7 +39,7 @@ function Navbar() {
                         </button>
                         <div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div className="navbar-nav py-0">
-                                <a href="/home" className="nav-item nav-link">Home</a>
+                                <a href="/" className="nav-item nav-link">Home</a>
                                 <a href="/about" className="nav-item nav-link">About</a>
                                 {/* <a href="course.html" className="nav-item nav-link">Courses</a>
                                 <a href="teacher.html" className="nav-item nav-link">Teachers</a> */}

@@ -7,7 +7,7 @@ function Topbar() {
         <div className="container-fluid d-none d-lg-block">
             <div className="row align-items-center py-2 px-xl-5">
                 <div className="col-lg-3">
-                    <a href="/home" className="text-decoration-none">
+                    <a href="/" className="text-decoration-none">
                         <h1 className="m-0"><span className="text-primary">V </span>TALENT</h1>
                     </a>
                 </div>
