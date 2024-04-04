@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackTop from '../components/BackTop';
 import { FileUploader } from "react-drag-drop-files";
+import SweetAlert2 from 'react-sweetalert2';
 
 
 function SubmitCV() {

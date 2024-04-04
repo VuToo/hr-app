@@ -3,6 +3,7 @@ import Topbar from '../components/Topbar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackTop from '../components/BackTop';
+import SweetAlert2 from 'react-sweetalert2';
 
 function Contact() {
     return (
@@ -23,7 +24,7 @@ function Contact() {
             </div>
         </div>
         {/* <!-- Header End --> */}
-        
+
         {/* <div className="container-fluid py-5">
             <div className="container">
                 <div className="row">
