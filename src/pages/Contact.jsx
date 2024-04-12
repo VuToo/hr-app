@@ -55,7 +55,7 @@ function Contact() {
             data.append('message', message);
             axios({
                 method: "post",
-                url: "https://api.vuxtoo.top/api/contactUs",
+                url: "http://127.0.0.1:8000/api/contactUs",
                 data: data, 
             }).then((res)=>{
                 setShow1(false);
@@ -69,6 +69,7 @@ function Contact() {
                         setPhone('');
                         setSubject('');
                         setMessage('');
+                        setChecked(false);
                     })
                 }else if(res.data.msg.fullName){
                     Toast.fire({
@@ -101,10 +102,11 @@ function Contact() {
     }
     return (
     <>
-        {/* {
+        {
             show1 && 
             <Spinner/>
-        } */}
+        }
+        
         <Topbar/>
         <Navbar/>
         {/* <!-- Header Start --> */}
