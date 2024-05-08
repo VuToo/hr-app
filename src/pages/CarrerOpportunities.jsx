@@ -132,7 +132,7 @@ function CarrerOpportunities() {
                                             <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-primary mr-2"></i>Lương : <small>4000 USD - 5000 USD</small></h6>
                                             <h6 className="m-0 mt-2"><i className="fa fa-solid fa-location-dot text-primary mr-2"></i>Địa điểm : <small>Hồ Chí Minh</small></h6>
                                             <h6 className="m-0 mt-2"><i className="fa fa-solid fa-briefcase text-primary mr-2"></i>Ngành nghề : <small>Olis - Gas</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-clock text-primary mr-2"></i>Cập nhật : <small>01/04/2024</small></h6>
+                                            {/* <h6 className="m-0 mt-2"><i className="fa fa-solid fa-clock text-primary mr-2"></i>Cập nhật : <small>01/04/2024</small></h6> */}
                                         </div>
                                         <div className="mt-3">
                                             <div className="d-flex flex-wrap m-n1 ">
