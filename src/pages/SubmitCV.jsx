@@ -21,6 +21,20 @@ function SubmitCV() {
             toast.addEventListener('mouseleave', Swal.resumeTimer)
         }                                    
     });
+    const [locationList, setLocationList] = useState([]);
+    const getLocationList = async () => {
+        await axios(`http://127.0.0.1:8000/api/getLocationsOn`)
+        .then((res)=> {
+            setLocationList(res.data);
+        })
+    }
+    const [industryList, setIndustryList] = useState([]);
+    const getIndustryList = async () => {
+        await axios(`http://127.0.0.1:8000/api/getIndustriesOn`)
+        .then((res)=> {
+            setIndustryList(res.data)
+        })
+    }
     const [file, setFile] = useState(null);
     console.log(file);
     const [showFile, setShowFile] = useState('');
@@ -38,15 +52,17 @@ function SubmitCV() {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [recentJob, setRecentJob] = useState('');
-    const [location, setLocation] = useState('');
+    const [locationId, setLocationId] = useState(0);
+    const [industryId, setIndustryId] = useState(0);
     const [message, setMessage] = useState('');
-    const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = useState(0);
     const formatPhoneNumber = /(0[3|5|7|8|9]+([0-9]{8}))\b/g;
+    console.log(checked);
     const SubmitCV = () => {
         if(
             fullName === '' && email === '' 
             && phone === '' && recentJob === '' 
-            && location === '' && message === '' 
+            && locationId === '' && message === '' && industryId === '' 
         ) {
             Toast.fire({
                 icon: 'error',
@@ -57,7 +73,7 @@ function SubmitCV() {
                 icon: 'error',
                 title: 'Your phone number format is incorrect !!'
             });
-        } else if(checked === false) {
+        } else if(checked === 0) {
             Toast.fire({
                 icon: 'error',
                 title: 'Do you agree to our terms and conditions?'
@@ -74,12 +90,14 @@ function SubmitCV() {
             data.append('email', email);
             data.append('phone', phone);
             data.append('recentJob', recentJob);
-            data.append('location', location);
+            data.append('locationId', locationId);
+            data.append('industryId', industryId);
             data.append('fileCV', file);
             data.append('message', message);
+            data.append('checked', checked);
             axios({
                 method: "post",
-                url: "https://api.vuxtoo.top/api/contactUs",
+                url: "http://127.0.0.1:8000/api/submitCv",
                 data: data, 
             }).then((res)=>{
                 setShow1(false);
@@ -92,7 +110,8 @@ function SubmitCV() {
                         setEmail('');
                         setPhone('');
                         setRecentJob('');
-                        setLocation('');
+                        setLocationId(0);
+                        setIndustryId(0);
                         setMessage('');
                     })
                 }else if(res.data.msg.fullName){
@@ -115,10 +134,15 @@ function SubmitCV() {
                         icon: 'error',
                         title: res.data.msg.recentJob
                     });
-                }else if(res.data.msg.location){
+                }else if(res.data.msg.locationId){
                     Toast.fire({
                         icon: 'error',
-                        title: res.data.msg.location
+                        title: res.data.msg.locationId
+                    });
+                }else if(res.data.msg.industryId){
+                    Toast.fire({
+                        icon: 'error',
+                        title: res.data.msg.industryId
                     });
                 }else if(res.data.msg.message){
                     Toast.fire({
@@ -130,6 +154,10 @@ function SubmitCV() {
         }
 
     }
+    useEffect(()=>{
+        getLocationList();
+        getIndustryList();
+    },[]);
     return (
     <>
         <Topbar/>
@@ -155,31 +183,54 @@ function SubmitCV() {
                             <h1>FILLING IN THE FORM</h1>
                         </div>
                         <div className="row justify-content-center">
-                            <div className="col-lg-10">
+                            <div className="col-12">
                                 <div className="contact-form bg-secondary rounded p-5">
                                     <div id="success"></div>
                                    
                                         <div className="control-group">
-                                            <input type="text" className="form-control border-0 p-4" value={fullName} onChange={(e)=>setFullName(e.target.value)}  placeholder="Full Name" required data-validation-required-message="Please enter your name"/>
+                                            <label htmlFor="fullname"><b style={{ color: "black" }}>FullName <span style={{color: "red"}}>*</span></b></label>
+                                            <input type="text" className="form-control border-0 p-4" id='fullname' value={fullName} onChange={(e)=>setFullName(e.target.value)}  placeholder="Full Name" required data-validation-required-message="Please enter your name"/>
                                             <p className="help-block text-danger"></p>
                                         </div>
                                         <div className="control-group">
-                                            <input type="email" className="form-control border-0 p-4" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                            <label htmlFor="email"><b style={{ color: "black" }}>Your Email <span style={{color: "red"}}>*</span></b></label>
+                                            <input type="email" className="form-control border-0 p-4" id='email' value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
                                             <p className="help-block text-danger"></p>
                                         </div>
                                         <div className="control-group">
-                                            <input type="text" className="form-control border-0 p-4" value={phone} onChange={(e)=>setPhone(e.target.value)} placeholder="Your Phone" required="required" data-validation-required-message="Please enter your phone" />
+                                            <label htmlFor="phone"><b style={{ color: "black" }}>Your Phone <span style={{color: "red"}}>*</span></b></label>
+                                            <input type="text" className="form-control border-0 p-4" id='phone' value={phone} onChange={(e)=>setPhone(e.target.value)} placeholder="Your Phone" required="required" data-validation-required-message="Please enter your phone" />
                                             <p className="help-block text-danger"></p>
                                         </div>
                                         <div className="control-group">
-                                            <input type="text" className="form-control border-0 p-4" value={recentJob} onChange={(e)=>setRecentJob(e.target.value)} placeholder="Recent Job" required="required" data-validation-required-message="Please enter recent job" />
+                                            <label htmlFor="recentJob"><b style={{ color: "black" }}>Recent Job <span style={{color: "red"}}>*</span></b></label>
+                                            <input type="text" id='recentJob' className="form-control border-0 p-4" value={recentJob} onChange={(e)=>setRecentJob(e.target.value)} placeholder="Recent Job" required="required" data-validation-required-message="Please enter recent job" />
                                             <p className="help-block text-danger"></p>
                                         </div>
-                                        <div className="control-group">
-                                            <input type="text" className="form-control border-0 p-4" value={location} onChange={(e)=>setLocation(e.target.value)} placeholder="Expected Work Location" required="required" data-validation-required-message="Please enter Expected Work Location" />
-                                            <p className="help-block text-danger"></p>
+                                        <div className="control-group mt-4">
+                                            <label htmlFor="location"><b style={{ color: "black" }}>Expected Work Location <span style={{color: "red"}}>*</span></b></label>
+                                            <select name="" id="location" className="form-control mt-1" onChange={(e)=> setLocationId(e.target.value)}>
+                                                <option value={locationId}>Select Location</option>
+                                            {
+                                                locationList && locationList.length > 0 && locationList.map((item, index) => (
+                                                    <option key={index} value={item.id}>{item.location}</option>
+                                                ))
+                                            } 
+                                            </select>
                                         </div>
-                                        <div className="control-group w-100">
+                                        <div className="control-group my-4">
+                                            <label htmlFor="industry"><b style={{ color: "black" }}>Expected Work Industry <span style={{color: "red"}}>*</span></b></label>
+                                            <select name="" id="industry" className="form-control mt-1" onChange={(e)=> setIndustryId(e.target.value)}>
+                                                <option value={industryId}>Select Idustry</option>
+                                            {
+                                                industryList && industryList.length > 0 && industryList.map((item, index)=> (
+                                                    <option key={index} value={item.id}>{item.industry}</option>
+                                                ))
+                                            }
+                                            </select>
+                                        </div>
+                                        <div className="control-group my-4">
+                                            <label htmlFor=""><b style={{ color: "black" }}>Attached resume <span style={{color: "red"}}>*</span></b></label>
                                             <FileUploader handleChange={uploadFile} name="file" types={fileTypes} multiple={false}/>
                                         </div>
                                         <div className="control-group mb-2">
@@ -190,21 +241,22 @@ function SubmitCV() {
                                         }
                                         </div>
                                         <div className="control-group">
-                                            <textarea className="form-control border-0 py-3 px-4" rows="5" value={message} onChange={(e)=>setMessage(e.target.value)} placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                            <label htmlFor="message"><b style={{ color: "black" }}>Your Message</b></label>
+                                            <textarea className="form-control border-0 py-3 px-4" id='message' rows="5" value={message} onChange={(e)=>setMessage(e.target.value)} placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
                                             <p className="help-block text-danger"></p>
                                         </div>
                                         {
-                                            checked === false ?
+                                            checked === 0 ?
                                             <div className="control-group">
                                                 <label className='ml-2'  htmlFor="apcept-policy">
-                                                    <input className="mr-2" type="checkbox" required="required" id='apcept-policy' onChange={()=>setChecked(true)} data-validation-required-message="Please checked"/>
+                                                    <input className="mr-2" type="checkbox" required="required" id='apcept-policy' onChange={()=>setChecked(1)} data-validation-required-message="Please checked"/>
                                                     I have read and agree to the <a href="/terms-of-use" target='_blank'>Terms of Use</a> and <a href="/terms-of-use" target='_blank'>Privacy Statement</a> of V-Talent Solution.
                                                 </label>
                                             </div>
                                             :
                                             <div className="control-group">
                                                 <label className='ml-2'  htmlFor="apcept-policy">
-                                                    <input className="mr-2" type="checkbox" required="required" id='apcept-policy' onChange={()=>setChecked(false)} data-validation-required-message="Please checked"/>
+                                                    <input className="mr-2" type="checkbox" required="required" id='apcept-policy' onChange={()=>setChecked(0)} data-validation-required-message="Please checked"/>
                                                     I have read and agree to the <a href="/terms-of-use" target='_blank'>Terms of Use</a> and <a href="/terms-of-use" target='_blank'>Privacy Statement</a> of V-Talent Solution.
                                                 </label>
                                             </div>

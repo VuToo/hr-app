@@ -218,22 +218,22 @@ function Contact() {
                                         <div id="success"></div>
                                             <div className="control-group">
                                                 {/* <label htmlFor="fullName" className='font-weight-bold text-black'>Full Name <span className='text-red'>*</span></label> */}
-                                                <input type="text" className="form-control border-0 p-2" id='fullName' onChange={(e)=>setFullName(e.target.value)} value={fullName}  placeholder="Full Name" required data-validation-required-message="Please enter your name" />
+                                                <input type="text" className="form-control border-0 p-4" id='fullName' onChange={(e)=>setFullName(e.target.value)} value={fullName}  placeholder="Full Name" required data-validation-required-message="Please enter your name" />
                                                 <p className="help-block text-danger"></p>
                                             </div>
                                             <div className="control-group mt-4">
                                                 {/* <label htmlFor="email" className='font-weight-bold text-black'>Your Email <span className='text-red'>*</span></label> */}
-                                                <input type="email" className="form-control border-0 p-2" id='email' onChange={(e)=>setEmail(e.target.value)} value={email} placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                                <input type="email" className="form-control border-0 p-4" id='email' onChange={(e)=>setEmail(e.target.value)} value={email} placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
                                                 <p className="help-block text-danger"></p>
                                             </div>
                                             <div className="control-group mt-4">
                                                 {/* <label htmlFor="phone" className='font-weight-bold text-black'>Your Phone <span className='text-red'>*</span></label> */}
-                                                <input type="text" className="form-control border-0 p-2" id='phone' onChange={(e)=>setPhone(e.target.value)} value={phone} placeholder="Your Phone" required="required" data-validation-required-message="Please enter your phone" />
+                                                <input type="text" className="form-control border-0 p-4" id='phone' onChange={(e)=>setPhone(e.target.value)} value={phone} placeholder="Your Phone" required="required" data-validation-required-message="Please enter your phone" />
                                                 <p className="help-block text-danger"></p>
                                             </div>
                                             <div className="control-group mt-4">
                                                 {/* <label htmlFor="subject" className='font-weight-bold text-black'>Your Subject <span className='text-red'>*</span></label> */}
-                                                <input type="text" className="form-control border-0 p-2" id='subject' onChange={(e)=>setSubject(e.target.value)} value={subject} placeholder="Subject" required="required" data-validation-required-message="Please enter your subject"/>
+                                                <input type="text" className="form-control border-0 p-4" id='subject' onChange={(e)=>setSubject(e.target.value)} value={subject} placeholder="Subject" required="required" data-validation-required-message="Please enter your subject"/>
                                                 <p className="help-block text-danger"></p>
                                             </div>
                                             <div className="control-group mt-4">
