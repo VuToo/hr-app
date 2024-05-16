@@ -36,7 +36,7 @@ function SubmitCV() {
         })
     }
     const [file, setFile] = useState(null);
-    console.log(file);
+    // console.log(file);
     const [showFile, setShowFile] = useState('');
     const fileTypes = [
         'doc', 'docx', 'pdf'
@@ -57,7 +57,6 @@ function SubmitCV() {
     const [message, setMessage] = useState('');
     const [checked, setChecked] = useState(0);
     const formatPhoneNumber = /(0[3|5|7|8|9]+([0-9]{8}))\b/g;
-    console.log(checked);
     const SubmitCV = () => {
         if(
             fullName === '' && email === '' 
