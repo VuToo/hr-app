@@ -30,9 +30,10 @@ function Navbar() {
                     </nav> */}
                 </div>
                 <div className="col-lg-9">
-                    <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                    <nav className="navbar navbar-expand-lg bg-light navbar-light py-lg-0 px-0">
                         <a href="/" className="text-decoration-none d-block d-lg-none">
-                            <h1 className="m-0"><span className="text-primary">V </span>TALENT</h1>
+                            {/* <h1 className="m-0"><span className="text-primary">V </span>TALENT</h1> */}
+                            <img  className="img-fluid img-thumbnail rounded  mx-auto d-block mb-lg-0" src="img/vtalent1.png" alt="Logo" style={{ height: "70px", width: "100%" }}/>
                         </a>
                         <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                             <span className="navbar-toggler-icon"></span>
@@ -44,11 +45,13 @@ function Navbar() {
                                 {/* <a href="course.html" className="nav-item nav-link">Courses</a>
                                 <a href="teacher.html" className="nav-item nav-link">Teachers</a> */}
                                 <div className="nav-item dropdown">
-                                    <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Service</a>
+                                    <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Our Service</a>
                                     <div className="dropdown-menu rounded-0 m-0 p-0">
-                                        <a href="blog.html" className="dropdown-item p-2">HR Consulting</a>
-                                        <a href="single.html" className="dropdown-item p-2">IT Technology</a>
-                                        <a href="single.html" className="dropdown-item p-2">Outsourcing</a>
+                                        <a href="/headhunting-service" className="dropdown-item px-4 py-2">
+                                            Headhunting Service
+                                        </a>
+                                        <a href="/talent-sourcing" className="dropdown-item px-4 py-2">Talent Sourcing</a>
+                                        <a href="/company-system-building" className="dropdown-item px-4 py-2">Company System Building</a>
                                     </div>
                                 </div>
                                 <a href="/search-job" className="nav-item nav-link">Career Opportunities</a>

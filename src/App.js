@@ -6,6 +6,9 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import SubmitCV from "./pages/SubmitCV";
 import TermsOfUse from "./pages/TermsOfUse";
+import FirstService from "./pages/FirstService";
+import SecondService from "./pages/SecondService";
+import ThirdService from "./pages/ThirdService";
 
 function App() {
   return (
@@ -20,8 +23,9 @@ function App() {
           <Route path="/contact" element={<Contact/>} />
           <Route path="/uploadcv" element={<SubmitCV/>} />
           <Route path="/terms-of-use" element={<TermsOfUse/>} />
-          
-          
+          <Route path="/headhunting-service" element={<FirstService/>} />
+          <Route path="/talent-sourcing" element={<SecondService/>} />
+          <Route path="/company-system-building" element={<ThirdService/>} />
         </Routes>
       </BrowserRouter>
     </div>
