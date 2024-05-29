@@ -11,6 +11,7 @@ function Navbar() {
                     <a className="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none" href="/" style={{height: '67px', padding: '0 30px'}}>
                         <h5 className="text-primary m-0"><i className="fa fa-book-open mr-2"></i>V-Talent Solution</h5>
                         {/* <i className="fa fa-angle-down text-primary"></i> */}
+                        {/* <i className="fa fa-book-open mr-2"></i> */}
                     </a>
                     {/* <nav className="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style={{width:'calc(100% - 30px)', zIndex: '9'}}>
                         <div className="navbar-nav w-100">
@@ -29,11 +30,11 @@ function Navbar() {
                         </div>
                     </nav> */}
                 </div>
-                <div className="col-lg-9">
+                <div className="col-lg-9 border-bottom">
                     <nav className="navbar navbar-expand-lg bg-light navbar-light py-lg-0 px-0">
                         <a href="/" className="text-decoration-none d-block d-lg-none">
                             {/* <h1 className="m-0"><span className="text-primary">V </span>TALENT</h1> */}
-                            <img  className="img-fluid img-thumbnail rounded  mx-auto d-block mb-lg-0" src="img/vtalent1.png" alt="Logo" style={{ height: "70px", width: "100%" }}/>
+                            <img  className="img-fluid rounded  mx-auto d-block mb-lg-0" src="img/vtalent2.png" alt="Logo" style={{ height: "30px", width: "100%" }}/>
                         </a>
                         <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                             <span className="navbar-toggler-icon"></span>
