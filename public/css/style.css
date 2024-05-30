@@ -9979,6 +9979,10 @@ h6,
   list-style-type: none;
 }
 
+/* New */
+.box-job:hover{
+  background-color: #F2F1F8;
+}
 
 
 

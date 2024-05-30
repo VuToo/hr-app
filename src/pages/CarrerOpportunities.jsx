@@ -77,8 +77,8 @@ function CarrerOpportunities() {
                     <div className="col-lg-8">
                         <div className="row pb-3">
                             <div className="col-lg-12 col-md-12 mb-4">
-                                <div className=" overflow-hidden mb-2">
-                                    <div className="bg-secondary p-4 mb-4 rounded">
+                                <div className=" overflow-hidden">
+                                    <a href="/detail-job" className="p-4 mb-4 border rounded box-job d-block">
                                         <h5>Trưởng phòng nhân sự (HRM)</h5>
                                         <div className="pt-2 mt-2">
                                             <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-primary mr-2"></i>Lương : <small>4000 USD - 5000 USD</small></h6>
@@ -93,8 +93,9 @@ function CarrerOpportunities() {
                                                 <a href="" className="btn btn-outline-primary m-1">Consulting</a>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="bg-secondary p-4 mb-4">
+                                    </a>
+                                    
+                                    <a href="" className="p-4 mb-4 border rounded box-job d-block">
                                         <h5>Trưởng phòng nhân sự (HRM)</h5>
                                         <div className="pt-2 mt-2">
                                             <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-primary mr-2"></i>Lương : <small>4000 USD - 5000 USD</small></h6>
@@ -109,8 +110,9 @@ function CarrerOpportunities() {
                                                 <a href="" className="btn btn-outline-primary m-1">Consulting</a>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="bg-secondary p-4 mb-4 ">
+                                    </a>
+
+                                    <a href="/detail-job" className="p-4 mb-4 border rounded box-job d-block">
                                         <h5>Trưởng phòng nhân sự (HRM)</h5>
                                         <div className="pt-2 mt-2">
                                             <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-primary mr-2"></i>Lương : <small>4000 USD - 5000 USD</small></h6>
@@ -125,22 +127,9 @@ function CarrerOpportunities() {
                                                 <a href="" className="btn btn-outline-primary m-1">Consulting</a>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="bg-secondary p-4 mb-4">
-                                        <h5>Trưởng phòng nhân sự (HRM)</h5>
-                                        <div className="pt-2 mt-2">
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-primary mr-2"></i>Lương : <small>4000 USD - 5000 USD</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-location-dot text-primary mr-2"></i>Địa điểm : <small>Hồ Chí Minh</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-briefcase text-primary mr-2"></i>Ngành nghề : <small>Olis - Gas</small></h6>
-                                            {/* <h6 className="m-0 mt-2"><i className="fa fa-solid fa-clock text-primary mr-2"></i>Cập nhật : <small>01/04/2024</small></h6> */}
-                                        </div>
-                                        <div className="mt-3">
-                                            <div className="d-flex flex-wrap m-n1 ">
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="bg-secondary p-4 mb-4">
+                                    </a>
+
+                                    <a href="/detail-job" className="p-4 mb-4 border rounded box-job d-block">
                                         <h5>Trưởng phòng nhân sự (HRM)</h5>
                                         <div className="pt-2 mt-2">
                                             <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-primary mr-2"></i>Lương : <small>4000 USD - 5000 USD</small></h6>
@@ -150,12 +139,10 @@ function CarrerOpportunities() {
                                         </div>
                                         <div className="mt-3">
                                             <div className="d-flex flex-wrap m-n1 ">
-                                                <a href="" className="btn btn-outline-primary m-1">Đại học</a>
-                                                <a href="" className="btn btn-outline-primary m-1">3 năm kinh nghiệm</a>
-                                                <a href="" className="btn btn-outline-primary m-1">Consulting</a>
+                                                <a href="" className="btn btn-outline-primary m-1"></a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                             <div className="col-12">

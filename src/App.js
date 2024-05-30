@@ -9,6 +9,8 @@ import TermsOfUse from "./pages/TermsOfUse";
 import FirstService from "./pages/FirstService";
 import SecondService from "./pages/SecondService";
 import ThirdService from "./pages/ThirdService";
+import DetailJob from "./pages/DetailJob";
+import ApplyCv from "./pages/ApplyCv";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/headhunting-service" element={<FirstService/>} />
           <Route path="/talent-sourcing" element={<SecondService/>} />
           <Route path="/company-system-building" element={<ThirdService/>} />
+          <Route path="/detail-job" element={<DetailJob/>} />
+          <Route path="/apply-cv" element={<ApplyCv/>} />
         </Routes>
       </BrowserRouter>
     </div>
