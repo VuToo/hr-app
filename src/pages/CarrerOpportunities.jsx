@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Topbar from '../components/Topbar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackTop from '../components/BackTop';
+import axios from 'axios';
 
 function CarrerOpportunities() {
+    const [locationList, setLocationList] = useState([]);
+    const getLocationList = async () => {
+        await axios(`http://127.0.0.1:8000/api/getLocationsOn`)
+        .then((res)=> {
+            setLocationList(res.data);
+        })
+    }
+    const [industryList, setIndustryList] = useState([]);
+    const getIndustryList = async () => {
+        await axios(`http://127.0.0.1:8000/api/getIndustriesOn`)
+        .then((res)=> {
+            setIndustryList(res.data)
+        })
+    }
+    useEffect(()=>{
+        getLocationList();
+        getIndustryList();
+    },[]);
     return (
     <>
         <Topbar/>
