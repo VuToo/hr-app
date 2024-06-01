@@ -28,7 +28,7 @@ function App() {
           <Route path="/headhunting-service" element={<FirstService/>} />
           <Route path="/talent-sourcing" element={<SecondService/>} />
           <Route path="/company-system-building" element={<ThirdService/>} />
-          <Route path="/detail-job" element={<DetailJob/>} />
+          <Route path="/detail-job/:id" element={<DetailJob/>} />
           <Route path="/apply-cv" element={<ApplyCv/>} />
         </Routes>
       </BrowserRouter>

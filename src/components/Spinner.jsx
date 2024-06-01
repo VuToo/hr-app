@@ -7,8 +7,8 @@ function Spinner() {
     <>
         <div className='wrapper'>
             <AtomicSpinner
-                electronPathCount= '15'
-                electronsPerPath= '10'
+                electronPathCount= {15}
+                electronsPerPath= {10}
             />
         </div>
     </>

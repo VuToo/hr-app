@@ -4,8 +4,23 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackTop from '../components/BackTop';
 import axios from 'axios';
+import Swal from "sweetalert2";
+import moment from 'moment';
+import SpinnerS from '../components/SpinnerS';
+
 
 function CarrerOpportunities() {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+    });
     const [locationList, setLocationList] = useState([]);
     const getLocationList = async () => {
         await axios(`http://127.0.0.1:8000/api/getLocationsOn`)
@@ -20,10 +35,48 @@ function CarrerOpportunities() {
             setIndustryList(res.data)
         })
     }
+    const [jobSearch, setJobSearch] = useState([]);
+    const getJobWithIndustry = (i) => {
+        axios(`http://127.0.0.1:8000/api/getJobsWithIndustry?industryId=`+i+``)
+        .then((res)=> {
+            setJobSearch(res.data);
+        })
+    }
+    const getJobWithLocation = (i) => {
+
+    }
+    console.log(jobSearch);
+    const [jobs, setJobs] = useState([]);
+    const [page, setPage] = useState(1);
+    const [number, setNumber] = useState([])
+    const getJobs = ()=> {
+        axios.get(`http://127.0.0.1:8000/api/getJobsPage?page=`+page+``)
+        .then((res) => {
+            setJobs(res.data.data);
+            const old = [];
+            for (let i = 1; i <= res.data.last_page; i++) {
+                old.push(i);
+            }
+            setNumber(old);
+        });
+    }
+    const [locations, setLocations] = useState([]);
     useEffect(()=>{
         getLocationList();
         getIndustryList();
+        getJobs();
     },[]);
+    useEffect(() => {
+        axios.get(`http://127.0.0.1:8000/api/getJobsPage?page=`+page+``)
+        .then((res) => {
+            setJobs(res.data.data);
+            const old = [];
+            for (let i = 1; i <= res.data.last_page; i++) {
+                old.push(i);
+            }
+            setNumber(old);
+        });
+    }, [page]);
     return (
     <>
         <Topbar/>
@@ -46,18 +99,11 @@ function CarrerOpportunities() {
                                     <div className="input-group">
                                         <select className='w-100 form-control-lg border-0'>
                                             <option value="0" >Select location</option>
-                                            <option value="1">Hồ Chí Minh</option>
-                                            <option value="2">Hà Nội</option>
-                                            <option value="3">Bình Dương</option>
-                                            <option value="4">Đồng Nai</option>
-                                            <option value="5">Long An</option>
-                                            <option value="6">Hải Phòng</option>
-                                            <option value="7">Tiền Giang</option>
-                                            <option value="8">Bắc Ninh</option>
-                                            <option value="9">An Giang</option>
-                                            <option value="10">Đà Nẵng</option>
-                                            <option value="11">Huế</option>
-                                            <option value="12">Quảng Nam</option>
+                                        {
+                                            locationList && locationList.length > 0 && locationList.map((item, index)=>(
+                                                <option value={item.id}>{item.location}</option>
+                                            ))
+                                        }
                                         </select>
                                     </div>
                                 </div>
@@ -67,10 +113,11 @@ function CarrerOpportunities() {
                                     <div className="input-group">
                                         <select className='w-100 form-control-lg border-0'>
                                                 <option value="0">Industry</option>
-                                                <option value="1">It - software</option>
-                                                <option value="2">Financail services</option>
-                                                <option value="3">Logistics</option>
-                                                <option value="4">Education</option>
+                                            {
+                                                industryList && industryList.length > 0 && industryList.map((item, index)=>(
+                                                    <option value={item.id}>{item.industry}</option>
+                                                ))
+                                            }
                                             </select>
                                         </div>
                                 </div>
@@ -96,163 +143,118 @@ function CarrerOpportunities() {
                     <div className="col-lg-8">
                         <div className="row pb-3">
                             <div className="col-lg-12 col-md-12 mb-4">
-                                <div className=" overflow-hidden">
-                                    <a href="/detail-job" className="p-4 mb-4 border rounded box-job d-block">
-                                        <h5>Trưởng phòng nhân sự (HRM)</h5>
+                                <h4>List Jobs</h4>
+                            {
+                                jobs && jobSearch.length <=0 && jobs.length>0 && jobs.map((item, index)=>(
+                                <div className=" overflow-hidden" key={index}>
+                                    <a href={"/detail-job/"+item.id} className="p-4 mb-2 border rounded box-job d-block">
+                                        <h5>{item.job_name}</h5>
                                         <div className="pt-2 mt-2">
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-primary mr-2"></i>Lương : <small>4000 USD - 5000 USD</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-location-dot text-primary mr-2"></i>Địa điểm : <small>Hồ Chí Minh</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-briefcase text-primary mr-2"></i>Ngành nghề : <small>Olis - Gas</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-clock text-primary mr-2"></i>Cập nhật : <small>01/04/2024</small></h6>
+                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-primary mr-2"></i>Salary : <small>{item.salary}</small></h6>
+                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-location-dot text-primary mr-2"></i>Location : <small>{item.location}</small></h6>
+                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-briefcase text-primary mr-2"></i>Industry : <small>{item.industryName}</small></h6>
+                                            <h6 className="m-0 mt-2"><i className="fa-solid fa-clock text-primary mr-2"></i>Update : <small>{moment(item.updated_at).format('MMMM Do YYYY')}</small></h6>
                                         </div>
-                                        <div className="mt-3">
+                                        {/* <div className="mt-3">
                                             <div className="d-flex flex-wrap m-n1 ">
                                                 <a href="" className="btn btn-outline-primary m-1">Đại học</a>
                                                 <a href="" className="btn btn-outline-primary m-1">3 năm kinh nghiệm</a>
                                                 <a href="" className="btn btn-outline-primary m-1">Consulting</a>
                                             </div>
-                                        </div>
-                                    </a>
-                                    
-                                    <a href="" className="p-4 mb-4 border rounded box-job d-block">
-                                        <h5>Trưởng phòng nhân sự (HRM)</h5>
-                                        <div className="pt-2 mt-2">
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-primary mr-2"></i>Lương : <small>4000 USD - 5000 USD</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-location-dot text-primary mr-2"></i>Địa điểm : <small>Hồ Chí Minh</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-briefcase text-primary mr-2"></i>Ngành nghề : <small>Olis - Gas</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-clock text-primary mr-2"></i>Cập nhật : <small>01/04/2024</small></h6>
-                                        </div>
-                                        <div className="mt-3">
-                                            <div className="d-flex flex-wrap m-n1 ">
-                                                <a href="" className="btn btn-outline-primary m-1">Đại học</a>
-                                                <a href="" className="btn btn-outline-primary m-1">3 năm kinh nghiệm</a>
-                                                <a href="" className="btn btn-outline-primary m-1">Consulting</a>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <a href="/detail-job" className="p-4 mb-4 border rounded box-job d-block">
-                                        <h5>Trưởng phòng nhân sự (HRM)</h5>
-                                        <div className="pt-2 mt-2">
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-primary mr-2"></i>Lương : <small>4000 USD - 5000 USD</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-location-dot text-primary mr-2"></i>Địa điểm : <small>Hồ Chí Minh</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-briefcase text-primary mr-2"></i>Ngành nghề : <small>Olis - Gas</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-clock text-primary mr-2"></i>Cập nhật : <small>01/04/2024</small></h6>
-                                        </div>
-                                        <div className="mt-3">
-                                            <div className="d-flex flex-wrap m-n1 ">
-                                                <a href="" className="btn btn-outline-primary m-1">Đại học</a>
-                                                <a href="" className="btn btn-outline-primary m-1">3 năm kinh nghiệm</a>
-                                                <a href="" className="btn btn-outline-primary m-1">Consulting</a>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <a href="/detail-job" className="p-4 mb-4 border rounded box-job d-block">
-                                        <h5>Trưởng phòng nhân sự (HRM)</h5>
-                                        <div className="pt-2 mt-2">
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-primary mr-2"></i>Lương : <small>4000 USD - 5000 USD</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-location-dot text-primary mr-2"></i>Địa điểm : <small>Hồ Chí Minh</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-briefcase text-primary mr-2"></i>Ngành nghề : <small>Olis - Gas</small></h6>
-                                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-clock text-primary mr-2"></i>Cập nhật : <small>01/04/2024</small></h6>
-                                        </div>
-                                        <div className="mt-3">
-                                            <div className="d-flex flex-wrap m-n1 ">
-                                                <a href="" className="btn btn-outline-primary m-1"></a>
-                                            </div>
-                                        </div>
+                                        </div> */}
                                     </a>
                                 </div>
+                                ))
+                            }
+                            {
+                                jobSearch && jobSearch.length > 0 && jobSearch.map((item, index)=>(
+                                <div style={{maxHeight: "500px",minHeight:"100px", overflowY: "auto"}}>
+                                    <div className=" overflow-hidden" key={index}>
+                                        <a href={"/detail-job/"+item.id} className="p-4 mb-2 border rounded box-job d-block">
+                                            <h5>{item.job_name}</h5>
+                                            <div className="pt-2 mt-2">
+                                                <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-primary mr-2"></i>Salary : <small>{item.salary}</small></h6>
+                                                <h6 className="m-0 mt-2"><i className="fa fa-solid fa-location-dot text-primary mr-2"></i>Location : <small>{item.location}</small></h6>
+                                                <h6 className="m-0 mt-2"><i className="fa fa-solid fa-briefcase text-primary mr-2"></i>Industry : <small>{item.industryName}</small></h6>
+                                                <h6 className="m-0 mt-2"><i className="fa-solid fa-clock text-primary mr-2"></i>Update : <small>{moment(item.updated_at).format('MMMM Do YYYY')}</small></h6>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                ))
+                            }
+                            {
+                                !jobs || jobs.length<=0 &&
+                                <div className="overflow-hidden">
+                                    <div className="p-4 mb-2 border rounded box-job d-block">
+                                    {
+                                        <SpinnerS/>
+                                    }
+                                    </div>
+                                    <div className="p-4 mb-2 border rounded box-job d-block">
+                                    {
+                                        <SpinnerS/>
+                                    }
+                                    </div>
+                                    <div className="p-4 mb-2 border rounded box-job d-block">
+                                    {
+                                        <SpinnerS/>
+                                    }
+                                    </div>
+                                    <div className="p-4 mb-2 border rounded box-job d-block">
+                                    {
+                                        <SpinnerS/>
+                                    }
+                                    </div>
+                                </div>
+                            }
                             </div>
-                            <div className="col-12">
-                                <nav aria-label="Page navigation">
-                                    <ul className="pagination pagination-lg justify-content-center mb-0">
-                                    <li className="page-item disabled">
-                                        <a className="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                        <span className="sr-only">Previous</span>
-                                        </a>
-                                    </li>
-                                    <li className="page-item active"><a className="page-link" href="#">1</a></li>
-                                    <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                    <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                    <li className="page-item">
-                                        <a className="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                        <span className="sr-only">Next</span>
-                                        </a>
-                                    </li>
+                            {
+                                jobs && jobs.length>0 && jobSearch.length<=0 &&
+                                <div className="col-12">
+                                    <ul className="pagination">
+                                    {
+                                        number && number.length>0 && number.map((item,index)=>(
+                                            page == item ?
+                                                <li className="page-item mx-1 active" key={index} style={{ cursor: "pointer" }} onClick={()=>setPage(item)}>
+                                                    <span className="page-link">{item}</span>
+                                                </li>
+                                            :
+                                                <li className="page-item mx-1" key={index} style={{ cursor: "pointer" }} onClick={()=>setPage(item)}>
+                                                    <span className="page-link">{item}</span>
+                                                </li>
+                                        ))
+                                    }
                                     </ul>
-                                </nav>
-                            </div>
+                                </div> 
+                            }
                         </div>
                     </div>
                     <div className="col-lg-4 mt-5 mt-lg-0">
                         
                         <div className="mb-5 border p-3 rounded" >
-                            <h3 className="text-uppercase mb-4">Industry</h3>
-                            <ul className="list-group list-group-flush" style={{maxHeight: "500px", overflowY: "auto"}}>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Financail services</a>
-                                    <span className="badge badge-primary badge-pill">150</span>
+                            <h4 className="text-uppercase mb-4">Industry</h4>
+                            <ul className="list-group list-group-flush border rounded" style={{maxHeight: "500px",minHeight:"100px", overflowY: "auto"}}>
+                            {
+                                industryList && industryList.length>0 && industryList.map((item, index)=>(
+                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mx-2" onClick={()=>getJobWithIndustry(item.id)} key={index} style={{ cursor: "pointer" }}>
+                                    <a className="text-decoration-none h6 m-0">{item.industry}</a>
+                                    <span className="badge badge-primary badge-pill">{item.SL}</span>
                                 </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Logistics</a>
-                                    <span className="badge badge-primary badge-pill">131</span>
+                                ))
+                            }
+                            {
+                                !industryList || industryList.length<=0 &&
+                                <li>
+                                    <SpinnerS/>
                                 </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Online Marketing</a>
-                                    <span className="badge badge-primary badge-pill">78</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">FMCG</a>
-                                    <span className="badge badge-primary badge-pill">56</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Email Marketing</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Education</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Banking</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Media & Advertising</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Media & Advertising</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Media & Advertising</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Media & Advertising</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Media & Advertising</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Media & Advertising</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Media & Advertising</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
+                            }
                             </ul>
                         </div>
         
                         <div className="mb-2 border p-3 rounded">
-                            <h3 className="text-uppercase mb-4">Job by location</h3>
+                            <h4 className="text-uppercase mb-4">Jobs by location</h4>
                             <div className="mb-3">
                                 <form action="">
                                     <div className="input-group">
@@ -265,62 +267,20 @@ function CarrerOpportunities() {
                                 </form>
                             </div>
                             <ul className="list-group list-group-flush" style={{maxHeight: "300px", overflowY: "auto"}}>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Hồ Chí Minh</a>
-                                    <span className="badge badge-primary badge-pill">150</span>
+                            {
+                                locations.length<=0 && locationList && locationList.length>0 && locationList.map((item, index)=>(
+                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2" onClick={()=>getJobWithLocation()}  style={{ cursor: "pointer" }} key={index}>
+                                    <a className="text-decoration-none h6 m-0">{item.location}</a>
+                                    <span className="badge badge-primary badge-pill">{item.SL}</span>
                                 </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Đà Nẵng</a>
-                                    <span className="badge badge-primary badge-pill">131</span>
+                                ))
+                            }
+                            {
+                                !locationList || locationList.length<=0 &&
+                                <li>
+                                    <SpinnerS/>
                                 </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Hà Nội</a>
-                                    <span className="badge badge-primary badge-pill">78</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">An Giang</a>
-                                    <span className="badge badge-primary badge-pill">56</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Quảng Ngãi</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Huế</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Bình Dương</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Đồng Nai</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Hải Phòng</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Khánh Hòa</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Long An</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Tiền Giang</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Nghệ An</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2">
-                                    <a href="" className="text-decoration-none h6 m-0">Quảng Nam</a>
-                                    <span className="badge badge-primary badge-pill">98</span>
-                                </li>
+                            }
                             </ul>
                         </div>
         
