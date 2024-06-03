@@ -4,8 +4,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackTop from '../components/BackTop';
 import "../assets/css/app.css";
+import { useParams } from "react-router-dom";
 
 function DetailJob() {
+    const {id} = useParams ();
     return (
     <>
         <Topbar/>
@@ -26,7 +28,7 @@ function DetailJob() {
                             </div>
                         </div> */}
                         <div className="position-relative overflow-hidden rounded mb-2">
-                            <img className="img-fluid" src="img/page-header-5.webp" alt=""/>
+                            <img className="img-fluid" src="../img/page-header-5.webp" alt=""/>
                             <div className="cat-overlay text-black">
                                 <div className="box-info row justify-content-between align-items-center">
                                     <div className="m-2 col-12 col-md-8">
@@ -36,7 +38,7 @@ function DetailJob() {
                                         <h6 className="m-0 mt-2"><i className="fa fa-solid fa-briefcase text-primary mr-2"></i>Industry : <small>Olis - Gas</small></h6>
                                     </div>
                                     <div className="my-2 col-12 col-md-3 text-center">
-                                        <a href="/apply-cv" className="btn btn-primary w-100">Apply</a>
+                                        <a href={"/apply-cv/"+id} className="btn btn-primary w-100">Apply</a>
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +68,7 @@ function DetailJob() {
                             {/* <div  className="m-3 row" dangerouslySetInnerHTML={{ __html: job.job_description }}></div> */}
                         </div>
                         <div>
-                            <a href="/apply-cv" className="btn btn-primary w-100 mt-3 mb-5">Apply</a>
+                            <a href={"/apply-cv/"+id} className="btn btn-primary w-100 mt-3 mb-5">Apply</a>
                         </div>
                     </div>
                     <div className="col-12 col-md-4 rounded" style={{ boxShadow: "-2px -4px 1px rgba(0, 0, 0, 0.7)" }}>

@@ -37,15 +37,26 @@ function CarrerOpportunities() {
     }
     const [jobSearch, setJobSearch] = useState([]);
     const getJobWithIndustry = (i) => {
+        // const data = new FormData();
+        // data.append('industryId', i);
+        // axios({
+        //     method: 'GET',
+        //     url: 'http://127.0.0.1:8000/api/getJobsWithIndustry',
+        //     headers: {'X-Requested-With': 'XMLHttpRequest'},
+        //     data: {data}
+        // })
         axios(`http://127.0.0.1:8000/api/getJobsWithIndustry?industryId=`+i+``)
+        .then((res)=> {
+            setJobSearch(res.data);
+            console.log(res.data);
+        })
+    }
+    const getJobWithLocation = (i) => {
+        axios(`http://127.0.0.1:8000/api/getJobsWithLocation?locationId=`+i+``)
         .then((res)=> {
             setJobSearch(res.data);
         })
     }
-    const getJobWithLocation = (i) => {
-
-    }
-    console.log(jobSearch);
     const [jobs, setJobs] = useState([]);
     const [page, setPage] = useState(1);
     const [number, setNumber] = useState([])
@@ -61,6 +72,36 @@ function CarrerOpportunities() {
         });
     }
     const [locations, setLocations] = useState([]);
+    const getLocations = (e) => {
+        axios(`http://127.0.0.1:8000/api/getLocationsSearch?locationSearch=`+e+``)
+        .then((res)=> {
+            setLocations(res.data);
+        })
+    }
+    const [locationId ,setLocationId] = useState(0);
+    const [industryId ,setIndustryId] = useState(0);
+    const [keyWord, setKeyWord] = useState('');
+    const searchJobs = () => {
+        // console.log(locationId, industryId, keyWord);
+        // const data = new FormData();
+        // data.append('keyWord', keyWord);
+        // data.append('locationId', locationId);
+        // data.append('industryId', industryId);
+        // axios({
+        //     method: 'GET',
+        //     url: 'http://127.0.0.1:8000/api/getJobsSearch',
+        //     data: data
+        // }).then((res)=> {
+        //     const result = res.data;
+        //     console.log(result);
+        //     setJobSearch(res.data);
+        // })
+        axios(`http://127.0.0.1:8000/api/getJobsSearch?keyWord=`+keyWord+`&locationId=`+locationId+`&industryId=`+industryId+``)
+        .then((res)=> {
+            const result = res.data;
+            setJobSearch(result);
+        })
+    }   
     useEffect(()=>{
         getLocationList();
         getIndustryList();
@@ -89,45 +130,45 @@ function CarrerOpportunities() {
                         <div className="row">
                             <div className='col-lg-4 col-md-6 col-sm-12'>
                                 <div className="mb-3">
-                                    <div className="input-group">
-                                        <input type="text" className="form-control form-control-lg" placeholder="Keyword"/>
-                                    </div>
+                                    {/* <div className="input-group"> */}
+                                        <input type="text" className="form-control form-control-lg" placeholder="Keyword" onChange={(e)=>setKeyWord(e.target.value)}/>
+                                    {/* </div> */}
                                 </div>
                             </div>
                             <div className='col-lg-3 col-md-6 col-sm-12'>
                                 <div className="mb-3">
-                                    <div className="input-group">
-                                        <select className='w-100 form-control-lg border-0'>
+                                    {/* <div className="input-group"> */}
+                                        <select className='w-100 form-control-lg border-0' onChange={(e)=>setLocationId(e.target.value)}>
                                             <option value="0" >Select location</option>
                                         {
                                             locationList && locationList.length > 0 && locationList.map((item, index)=>(
-                                                <option value={item.id}>{item.location}</option>
+                                                <option key={index} value={item.id}>{item.location}</option>
                                             ))
                                         }
                                         </select>
-                                    </div>
+                                    {/* </div> */}
                                 </div>
                             </div>
                             <div className='col-lg-3 col-md-6 col-sm-12'>
                                 <div className="mb-3">
-                                    <div className="input-group">
-                                        <select className='w-100 form-control-lg border-0'>
-                                                <option value="0">Industry</option>
-                                            {
-                                                industryList && industryList.length > 0 && industryList.map((item, index)=>(
-                                                    <option value={item.id}>{item.industry}</option>
-                                                ))
-                                            }
-                                            </select>
-                                        </div>
+                                    {/* <div className="input-group"> */}
+                                        <select className='w-100 form-control-lg border-0' onChange={(e)=>setIndustryId(e.target.value)}>
+                                            <option value="0">Industry</option>
+                                        {
+                                            industryList && industryList.length > 0 && industryList.map((item, index)=>(
+                                                <option key={index} value={item.id}>{item.industry}</option>
+                                            ))
+                                        }
+                                        </select>
+                                    {/* </div> */}
                                 </div>
                             </div>
                             <div className='col-lg-2 col-md-6 col-sm-12'>
                                 <div className="mb-3">
-                                    <div className="input-group ">
+                                    {/* <div className="input-group "> */}
                                         {/* <a className="btn btn-primary btn-lg py-2 px-4 ml-auto d-lg-block" href="">Search</a> */}
-                                        <button className="btn btn-primary btn-lg py-2 px-4 ml-auto w-100 d-lg-block">Search</button>
-                                    </div>
+                                        <button className="btn btn-primary btn-lg py-2 px-4 ml-auto w-100 d-lg-block" onClick={()=>searchJobs()}>Search</button>
+                                    {/* </div> */}
                                 </div>
                             </div>
                             {/* <div className='col-lg-2 col-md-6 col-sm-12'>
@@ -167,8 +208,10 @@ function CarrerOpportunities() {
                                 ))
                             }
                             {
-                                jobSearch && jobSearch.length > 0 && jobSearch.map((item, index)=>(
-                                <div style={{maxHeight: "500px",minHeight:"100px", overflowY: "auto"}}>
+                                jobSearch && jobSearch.length > 0 &&
+                                <div  style={{maxHeight: "1000px",minHeight:"800px", overflowY: "auto", boxShadow: "2px 4px rgba(0, 0, 0, 0.7)"}}>
+                                {
+                                    jobSearch.map((item, index)=>(
                                     <div className=" overflow-hidden" key={index}>
                                         <a href={"/detail-job/"+item.id} className="p-4 mb-2 border rounded box-job d-block">
                                             <h5>{item.job_name}</h5>
@@ -181,8 +224,9 @@ function CarrerOpportunities() {
                                         </a>
                                     </div>
 
+                                    ))
+                                }
                                 </div>
-                                ))
                             }
                             {
                                 !jobs || jobs.length<=0 &&
@@ -258,21 +302,29 @@ function CarrerOpportunities() {
                             <div className="mb-3">
                                 <form action="">
                                     <div className="input-group">
-                                        <input type="text" className="form-control form-control-sm" placeholder="location"/>
+                                        {/* <input type="text" className="form-control form-control-sm" placeholder="location" onKeyUp={(e)=>setLocationSearch(e.target.value)}/> */}
+                                        <input type="text" className="form-control form-control-sm" placeholder="location" onKeyUp={(e)=>getLocations(e.target.value)}/>
                                         <div className="input-group-append">
-                                            <span className="input-group-text bg-transparent text-primary"><i
-                                                    className="fa fa-search"></i></span>
+                                            <span className="input-group-text bg-transparent text-primary"><i className="fa fa-search"></i></span>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                             <ul className="list-group list-group-flush" style={{maxHeight: "300px", overflowY: "auto"}}>
                             {
-                                locations.length<=0 && locationList && locationList.length>0 && locationList.map((item, index)=>(
-                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2" onClick={()=>getJobWithLocation()}  style={{ cursor: "pointer" }} key={index}>
+                                locations.length <= 0 && locationList && locationList.length>0 && locationList.map((item, index)=>(
+                                <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2" onClick={()=>getJobWithLocation(item.id)}  style={{ cursor: "pointer" }} key={index}>
                                     <a className="text-decoration-none h6 m-0">{item.location}</a>
                                     <span className="badge badge-primary badge-pill">{item.SL}</span>
                                 </li>
+                                ))
+                            }
+                            {
+                                locations.length>0 && locations.map((item,index)=>(
+                                    <li className="list-group-item d-flex justify-content-between align-items-center px-0 mr-2" onClick={()=>getJobWithLocation(item.id)}  style={{ cursor: "pointer" }} key={index}>
+                                        <a className="text-decoration-none h6 m-0">{item.location}</a>
+                                        <span className="badge badge-primary badge-pill">{item.SL}</span>
+                                    </li>
                                 ))
                             }
                             {

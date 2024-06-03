@@ -29,7 +29,7 @@ function App() {
           <Route path="/talent-sourcing" element={<SecondService/>} />
           <Route path="/company-system-building" element={<ThirdService/>} />
           <Route path="/detail-job/:id" element={<DetailJob/>} />
-          <Route path="/apply-cv" element={<ApplyCv/>} />
+          <Route path="/apply-cv/:id" element={<ApplyCv/>} />
         </Routes>
       </BrowserRouter>
     </div>
