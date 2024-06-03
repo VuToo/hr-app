@@ -27,38 +27,55 @@ function FirstService() {
         {/* <!-- About Start --> */}
         <div className="container-fluid">
             <div className="container py-2">
-                <div className="row align-items-start">
-                    <div className="col-lg-7">
+                <div className="row align-items-center">
+                    <div className="col-lg-6 my-3">
                         <div className='py-3'>
-                            <i class="fa-solid fa-circle-check text-success pr-xl-3"></i>
-                            <span>Discovering top-tier leadership is more than just searching—it's about unearthing hidden gems who will drive your organization forward. At V Talent Solution, our Headhunting Service is dedicated to pinpointing individuals perfectly suited for your specific needs. We're committed to curating a powerhouse of leaders, ensuring your business thrives with a team brimming with energy and expertise.</span>
-                        </div>
-                        <div className='py-3'>
-                            <i class="fa-solid fa-circle-check text-success pr-xl-3"></i>
-                            <span>Discovering top-tier leadership is more than just searching—it's about unearthing hidden gems who will drive your organization forward. At V Talent Solution, our Headhunting Service is dedicated to pinpointing individuals perfectly suited for your specific needs. We're committed to curating a powerhouse of leaders, ensuring your business thrives with a team brimming with energy and expertise.</span>
-                        </div>
-                        <div className='py-3'>
-                            <i class="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
                             <span>Discovering top-tier leadership is more than just searching—it's about unearthing hidden gems who will drive your organization forward. At V Talent Solution, our Headhunting Service is dedicated to pinpointing individuals perfectly suited for your specific needs. We're committed to curating a powerhouse of leaders, ensuring your business thrives with a team brimming with energy and expertise.</span>
                         </div>
                     </div>
-                    <div className="col-lg-5">
-                        <img className="img-fluid rounded mb-4 mb-lg-0" src="img/blog-2.jpg" alt=""/>
+                    <div className="col-lg-6 my-3">
+                        <img className="img-fluid rounded mb-2 mb-lg-0" src="../img/headhunt-1.jpg" alt=""/>
                     </div>
-                    <div className="col-lg-12">
-                        <h4>Why choose us</h4>
-                        <p>At our headhunting firm, we prioritize more than just filling vacancies. We believe that exceptional recruitment goes beyond utilizing databases and advanced technology. Our mission is to connect candidates with clients by accurately matching skills and aligning values with every placement.</p>
-                        <p>We understand that experience and expertise are vital, but we also recognize the importance of emotional intelligence and an intuitive grasp of each role. Our comprehensive recruitment process ensures that we provide not only the right skills but also the right fit for your organizational culture. This holistic approach guarantees that every candidate we place contributes meaningfully to your team’s success.</p>
-                        <p>Choosing us means partnering with a team dedicated to excellence in recruitment, driven by a commitment to find not just any candidate, but the right candidate for your unique needs. We blend data-driven strategies with human insight to deliver results that exceed expectations.</p>
-                        <h4>Core Value</h4>
-                        <p><b>Value: </b>We are dedicated to delivering real value to our customers through effective and tailored HR solutions. By focusing on high-quality service, we help our clients optimize their resources and achieve their business objectives. Our priority is to ensure that every solution we design and implement offers the best value, meeting and exceeding our customers' expectations.</p>
-                        <p><b>Trust: </b>Building and maintaining trust with our customers is fundamental to our success. We emphasize transparency, integrity, and a steadfast commitment to our promises. Our goal is to ensure that customers can always rely on our services and advice, fostering strong, long-term partnerships based on mutual trust.</p>
-                        <p><b>Support: </b>We understand the importance of timely and professional support. We are always ready to assist our customers in every situation, from strategic consulting to resolving unexpected challenges. By providing dedicated and comprehensive support, we help our customers overcome obstacles and achieve sustainable growth.</p>
-                        <p></p>
-                        <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-black mr-2"></i><b>Email : info@vtalentsolution.com</b></h6>
-                        <h6 className="m-0 mt-2"><i className="fa fa-solid fa-location-dot text-black mr-2"></i><b>Phone : 0382068609</b></h6>
-                        <h6 className="m-0 mt-2"><i className="fa fa-solid fa-briefcase text-black mr-2"></i><b>Địa chỉ:</b></h6>
+                    <div className="col-lg-6 my-3">
+                        <img className="img-fluid rounded mb-4 mb-lg-0" src="../img/headhunt-2.jpg" alt=""/>
                     </div>
+                    <div className="col-lg-6 my-3">
+                        <h4>Value:</h4>
+                        <div className='py-3'>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <span>Talent Discovery: Identifying potential leaders aligned with your strategic goals and specific positions.</span>
+                        </div>
+                        <div className='py-3'>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <span>Quality Assurance: Providing only the highest quality candidates, bringing long-term value to your organization.</span>
+                        </div>
+                        <div className='py-3'>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <span>Efficient Recruitment: Streamlining the hiring process to quickly find the right candidates, saving you valuable time.</span>
+                        </div>
+                        <div className='py-3'>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <span>Extensive Network: Leveraging our vast network to connect with the best talent in the industry.</span>
+                        </div>
+                    </div>
+                    <div className="col-lg-12 my-3">
+                        <div className='mb-3'>
+                            <h4>Vision & Mission</h4>
+                            <p>Vision: To be the leading provider of top-tier talent solutions, fostering growth and innovation in organizations worldwide </p>
+                            <p>Mission: To connect exceptional talent with dynamic organizations, driving mutual growth and success through strategic and customized HR solutions.</p>
+                        </div>
+                        <div className='mb-3'>
+                            <p>Let V Talent Solution help you overcome your challenges in recruitment, talent sourcing, and organizational restructuring.</p>
+                            <p>Send your requirement to info@vtalentsolution.com & we will call you as soon as possible.</p>
+                        </div>
+                        <div className='mb-3'>
+                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-black mr-2"></i><b>Email : info@vtalentsolution.com</b></h6>
+                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-location-dot text-black mr-2"></i><b>Phone : 0382 068 609</b></h6>
+                            <h6 className="m-0 mt-2"><i className="fa fa-solid fa-briefcase text-black mr-2"></i><b>Address: No. 20, Street 8, Ward 11, Go Vap District, Ho Chi Minh City</b></h6>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

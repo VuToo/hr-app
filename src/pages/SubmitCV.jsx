@@ -39,15 +39,13 @@ function SubmitCV() {
     // console.log(file);
     const [showFile, setShowFile] = useState('');
     const fileTypes = [
-        'doc', 'docx', 'pdf'
+        'doc', 'docx', 'pdf', 'vnd.openxmlformats-officedocument.wordprocessingml.docume' , 'vnd.openxmlformats-officedocument.wordprocessingml.document'
     ];
     const uploadFile = (file) => {
         setFile(file);
         var url = URL.createObjectURL(file);
         setShowFile(url);
     }
-
-    const [show1, setShow1] = useState(false);
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -83,7 +81,6 @@ function SubmitCV() {
                 title: 'Select your CV file, Please !!!'
             });
         } else {
-            setShow1(true);
             var data = new FormData();
             data.append('fullName', fullName);
             data.append('email', email);
@@ -99,7 +96,6 @@ function SubmitCV() {
                 url: "http://127.0.0.1:8000/api/submitCv",
                 data: data, 
             }).then((res)=>{
-                setShow1(false);
                 if(res.data.check === true){
                     Toast.fire({
                         icon: 'success',

@@ -48,7 +48,6 @@ function CarrerOpportunities() {
         axios(`http://127.0.0.1:8000/api/getJobsWithIndustry?industryId=`+i+``)
         .then((res)=> {
             setJobSearch(res.data);
-            console.log(res.data);
         })
     }
     const getJobWithLocation = (i) => {

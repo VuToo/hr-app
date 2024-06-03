@@ -27,7 +27,7 @@ function App() {
           <Route path="/terms-of-use" element={<TermsOfUse/>} />
           <Route path="/headhunting-service" element={<FirstService/>} />
           <Route path="/talent-sourcing" element={<SecondService/>} />
-          <Route path="/company-system-building" element={<ThirdService/>} />
+          <Route path="/organizational-restructuring" element={<ThirdService/>} />
           <Route path="/detail-job/:id" element={<DetailJob/>} />
           <Route path="/apply-cv/:id" element={<ApplyCv/>} />
         </Routes>

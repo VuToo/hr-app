@@ -34,7 +34,7 @@ function Navbar() {
                     <nav className="navbar navbar-expand-lg bg-light navbar-light py-lg-0 px-0">
                         <a href="/" className="text-decoration-none d-block d-lg-none">
                             {/* <h1 className="m-0"><span className="text-primary">V </span>TALENT</h1> */}
-                            <img  className="img-fluid rounded  mx-auto d-block mb-lg-0" src="img/vtalent2.png" alt="Logo" style={{ height: "30px", width: "100%" }}/>
+                            <img  className="img-fluid rounded  mx-auto d-block mb-lg-0" src="../img/vtalent2.png" alt="Logo" style={{ height: "30px", width: "100%" }}/>
                         </a>
                         <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                             <span className="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@ function Navbar() {
                                             Headhunting Service
                                         </a>
                                         <a href="/talent-sourcing" className="dropdown-item px-4 py-2">Talent Sourcing</a>
-                                        <a href="/company-system-building" className="dropdown-item px-4 py-2">Company System Building</a>
+                                        <a href="/organizational-restructuring" className="dropdown-item px-4 py-2">Organizational Restructuring</a>
                                     </div>
                                 </div>
                                 <a href="/search-job" className="nav-item nav-link">Career Opportunities</a>
