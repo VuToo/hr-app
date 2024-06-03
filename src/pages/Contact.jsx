@@ -190,14 +190,13 @@ function Contact() {
                             <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: "5px"}}>GET IN TOUCH</h5>
                             <h1 className="text-white">V-TALENT SOLUTION</h1>
                         </div>
-                        <p className='text-white'><i className="fa fa-map-marker-alt text-primary mr-2"></i>123 Street, Quận 1, Thành Phố Hồ CHí Minh</p>
-                        <p className='text-white'><i className="fa fa-phone-alt text-primary mr-2"></i>+012 345 67890</p>
-                        <p className='text-white'><i className="fa fa-envelope text-primary mr-2"></i>info@example.com</p>
+                        <p className='text-white'><i className="fa fa-map-marker-alt text-primary mr-2"></i>No. 20, Street 8, Ward 11, Go Vap District, Ho Chi Minh City</p>
+                        <p className='text-white'><i className="fa fa-phone-alt text-primary mr-2"></i>0382 068 609</p>
+                        <p className='text-white'><i className="fa fa-envelope text-primary mr-2"></i>info@vtalentsolution.com</p>
                         
                         <ul className="list-inline text-white m-0">
-                            <li className="py-2"><i className="fa fa-check text-primary mr-3"></i>Labore eos amet dolor amet diam</li>
-                            <li className="py-2"><i className="fa fa-check text-primary mr-3"></i>Etsea et sit dolor amet ipsum</li>
-                            <li className="py-2"><i className="fa fa-check text-primary mr-3"></i>Diam dolor diam elitripsum vero.</li>
+                            <li className="py-2"><i className="fa fa-check text-primary mr-3"></i>Vision: To be the leading provider of top-tier talent solutions, fostering growth and innovation in organizations worldwide </li>
+                            <li className="py-2"><i className="fa fa-check text-primary mr-3"></i>Mission: To connect exceptional talent with dynamic organizations, driving mutual growth and success through strategic and customized HR solutions.</li>
                         </ul>
                         <div className="d-flex justify-content-start mt-4">
                             <a className="btn btn-outline-primary btn-square mr-2" href="#"><i className="fab fa-twitter"></i></a>
