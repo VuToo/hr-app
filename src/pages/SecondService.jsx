@@ -28,8 +28,8 @@ function SecondService() {
                 <div className="row align-items-center">
                     <div className="col-lg-6 my-3">
                         <div  className='py-3 text-justify'>
-                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
-                            <span style={{ lineHeight: "1.8" }}>In the realm of talent acquisition, time is of the essence. That's why at V Talent Solution, our Talent Sourcing service is designed to save you precious hours by presenting a diverse pool of top-quality candidates. From innovative thinkers to seasoned professionals, we harness cutting-edge technology to connect you with the best, empowering you to build a dynamic and inclusive team ready to tackle any challenge.</span>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3 pr-1"></i>
+                            <span style={{ lineHeight: "2.3" }}>In the realm of talent acquisition, time is of the essence. That's why at V Talent Solution, our Talent Sourcing service is designed to save you precious hours by presenting a diverse pool of top-quality candidates. From innovative thinkers to seasoned professionals, we harness cutting-edge technology to connect you with the best, empowering you to build a dynamic and inclusive team ready to tackle any challenge.</span>
                         </div>
                     </div>
                     <div className="col-lg-6 my-3">
@@ -42,23 +42,23 @@ function SecondService() {
                     <div className="col-lg-6 my-3 text-justify">
                         <h4>Values:</h4>
                         <div  className='py-2'>
-                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3 pr-1"></i>
                             <span>Time Saving: Helping you save time in sourcing potential candidates, from screening to engagement.</span>
                         </div>
                         <div  className='py-2'>
-                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3 pr-1"></i>
                             <span>Diverse Candidate Pool: Creating a diverse candidate pool from various sources, providing you with a wide and diverse selection.</span>
                         </div>
                         <div  className='py-2'>
-                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3 pr-1"></i>
                             <span>Quality Talent Sourcing: Ensuring access to a pool of high-quality candidates who meet your specific needs.</span>
                         </div>
                         <div  className='py-2'>
-                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3 pr-1"></i>
                             <span>Talent Mapping: Utilizing analytics to map talent by skills, qualifications, and location, ensuring you are always ready to hire.</span>
                         </div>
                         <div  className='py-2'>
-                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3 pr-1"></i>
                             <span>Candidate Review: Improving the quality of your candidate pipeline and boosting your employer brand with comprehensive candidate reviews.</span>
                         </div>
                     </div>

@@ -28,7 +28,7 @@ function FirstService() {
                 <div className="row align-items-center">
                     <div className="col-lg-6 my-3">
                         <div className='py-3 text-justify'>
-                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3 pr-1"></i>
                             <span style={{ lineHeight: "1.8" }}>Discovering top-tier leadership is more than just searching—it's about unearthing hidden gems who will drive your organization forward. At V Talent Solution, our Headhunting Service is dedicated to pinpointing individuals perfectly suited for your specific needs. We're committed to curating a powerhouse of leaders, ensuring your business thrives with a team brimming with energy and expertise.</span>
                         </div>
                     </div>
@@ -41,19 +41,19 @@ function FirstService() {
                     <div className="col-lg-6 my-3 text-justify">
                         <h4>Values:</h4>
                         <div className='py-2'>
-                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3 pr-1"></i>
                             <span>Talent Discovery: Identifying potential leaders aligned with your strategic goals and specific positions.</span>
                         </div>
                         <div className='py-2'>
-                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3 pr-1"></i>
                             <span>Quality Assurance: Providing only the highest quality candidates, bringing long-term value to your organization.</span>
                         </div>
                         <div className='py-2'>
-                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3 pr-1"></i>
                             <span>Efficient Recruitment: Streamlining the hiring process to quickly find the right candidates, saving you valuable time.</span>
                         </div>
                         <div className='py-2'>
-                            <i className="fa-solid fa-circle-check text-success pr-xl-3"></i>
+                            <i className="fa-solid fa-circle-check text-success pr-xl-3 pr-1"></i>
                             <span>Extensive Network: Leveraging our vast network to connect with the best talent in the industry.</span>
                         </div>
                     </div>

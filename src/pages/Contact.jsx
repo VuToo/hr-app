@@ -185,7 +185,7 @@ function Contact() {
                     <div className="col-lg-4 mb-5 mb-lg-0">
                         <div className="mb-4">
                             <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: "5px"}}>GET IN TOUCH</h5>
-                            <h1 className="text-white">V-TALENT SOLUTION</h1>
+                            <h3 className="text-white">V-TALENT SOLUTION</h3>
                         </div>
                         <p className='text-white'><i className="fa fa-map-marker-alt text-primary mr-2"></i>No. 20, Street 8, Ward 11, Go Vap District, Ho Chi Minh City</p>
                         <p className='text-white'><i className="fa fa-phone-alt text-primary mr-2"></i>0382 068 609</p>
