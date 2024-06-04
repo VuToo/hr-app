@@ -1,13 +1,11 @@
 import React from 'react';
-import Topbar from '../components/Topbar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackTop from '../components/BackTop';
 
 function Blog() {
     return (
-        <>
-        <Topbar/>
+    <>
         <Navbar/>
         {/* <!-- Header Start --> */}
         <div className="container-fluid page-header">

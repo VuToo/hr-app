@@ -1,5 +1,4 @@
 import React from 'react';
-import Topbar from '../components/Topbar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackTop from '../components/BackTop';
@@ -8,7 +7,6 @@ import News from '../components/News';
 function ThirdService() {
     return (
     <>
-        <Topbar/>
         <Navbar/>
         {/* <!-- Header Start --> */}
         <div className="container-fluid page-header" style={{marginBottom: '120px'}}>
@@ -68,7 +66,7 @@ function ThirdService() {
                         </div>
                     </div>
                     <div className="col-lg-12 my-3">
-                        <div className='mb-3'>
+                        {/* <div className='mb-3'>
                             <h4>Vision & Mission</h4>
                             <p>Vision: To be the leading provider of top-tier talent solutions, fostering growth and innovation in organizations worldwide </p>
                             <p>Mission: To connect exceptional talent with dynamic organizations, driving mutual growth and success through strategic and customized HR solutions.</p>
@@ -76,7 +74,7 @@ function ThirdService() {
                         <div className='mb-3'>
                             <p>Let V Talent Solution help you overcome your challenges in recruitment, talent sourcing, and organizational restructuring.</p>
                             <p>Send your requirement to info@vtalentsolution.com & we will call you as soon as possible.</p>
-                        </div>
+                        </div> */}
                         <div className='mb-3'>
                             <h6 className="m-0 mt-2"><i className="fa fa-solid fa-money-bill text-black mr-2"></i><b>Email : info@vtalentsolution.com</b></h6>
                             <h6 className="m-0 mt-2"><i className="fa fa-solid fa-location-dot text-black mr-2"></i><b>Phone : 0382 068 609</b></h6>

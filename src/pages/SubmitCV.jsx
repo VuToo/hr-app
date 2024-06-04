@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Topbar from '../components/Topbar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackTop from '../components/BackTop';
 import { FileUploader } from "react-drag-drop-files";
 import Swal from 'sweetalert2';
-import Spinner from '../components/Spinner';
 import axios from 'axios';
 
 
@@ -155,7 +153,6 @@ function SubmitCV() {
     },[]);
     return (
     <>
-        <Topbar/>
         <Navbar/>
         {/* <!-- Header Start --> */}
         <div className="container-fluid page-header" style={{marginBottom: '30px'}}>

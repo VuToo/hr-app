@@ -10,8 +10,8 @@ function About() {
                     <div className="col-lg-5">
                         <img className="img-fluid rounded mb-4 mb-lg-0" src="img/about-V.jpg" alt=""/>
                     </div>
-                    <div className="col-lg-7">
-                        <div className="text-left mb-4">
+                    <div className="col-lg-7 text-justify">
+                        <div className="mb-4">
                             <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>About Us</h5>
                             <h1>V-Talent Solution</h1>
                         </div>

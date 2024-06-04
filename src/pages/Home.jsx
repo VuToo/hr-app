@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import Topbar from '../components/Topbar';
 import Carousel from '../components/Carousel';
 import About from '../components/About';
 import JobList from '../components/JobList';
@@ -11,7 +10,6 @@ import Footer from '../components/Footer';
 function Home() {
   return (
     <>
-        <Topbar/>
         <Navbar/>
         <Carousel/>
         <About/>

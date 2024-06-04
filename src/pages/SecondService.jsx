@@ -1,5 +1,4 @@
 import React from 'react';
-import Topbar from '../components/Topbar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackTop from '../components/BackTop';
@@ -8,7 +7,6 @@ import News from '../components/News';
 function SecondService() {
     return (
     <>
-        <Topbar/>
         <Navbar/>
         {/* <!-- Header Start --> */}
         <div className="container-fluid page-header" style={{marginBottom: '120px'}}>

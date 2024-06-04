@@ -9464,6 +9464,9 @@ button.bg-dark:focus {
   .text-md-center {
     text-align: center !important;
   }
+  .text-md-justify {
+    text-align: justify !important;
+  }
 }
 
 @media (min-width: 992px) {

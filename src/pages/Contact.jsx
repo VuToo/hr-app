@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Topbar from '../components/Topbar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackTop from '../components/BackTop';
@@ -106,8 +105,6 @@ function Contact() {
             show1 && 
             <Spinner/>
         }
-        
-        <Topbar/>
         <Navbar/>
         {/* <!-- Header Start --> */}
         <div className="container-fluid page-header" style={{marginBottom: '30px'}}>

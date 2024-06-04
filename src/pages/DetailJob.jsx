@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Topbar from '../components/Topbar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackTop from '../components/BackTop';
@@ -35,7 +34,6 @@ function DetailJob() {
     },[]);
     return (
     <>
-        <Topbar/>
         <Navbar/>
         <div className="container-fluid py-2">
             <div className="container py-5">
