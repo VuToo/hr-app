@@ -25,7 +25,7 @@ function Blog() {
         {/* <!-- Blog Start --> */}
         <div className="container-fluid">
             <div className="container py-5">
-                <div className="row">
+                <div className="row justify-content-center">
                     <div className="col-lg-4 mt-5 mt-lg-0">
         
                         {/* <!-- Search Form --> */}
@@ -72,7 +72,7 @@ function Blog() {
 
                     <div className="col-lg-8">
                         <div className="row pb-3">
-                            <div className="col-lg-6 mb-4">
+                            <div className="col-md-8 col-lg-6 mb-4">
                                 <div className="blog-item position-relative overflow-hidden rounded mb-2">
                                     <img className="img-fluid" src="img/blog-1.jpg" alt=""/>
                                     <a className="blog-overlay text-decoration-none" href="">
@@ -81,7 +81,7 @@ function Blog() {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-6 mb-4">
+                            <div className="col-md-8 col-lg-6 mb-4">
                                 <div className="blog-item position-relative overflow-hidden rounded mb-2">
                                     <img className="img-fluid" src="img/blog-2.jpg" alt=""/>
                                     <a className="blog-overlay text-decoration-none" href="">
@@ -90,7 +90,7 @@ function Blog() {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-6 mb-4">
+                            <div className="col-md-8 col-lg-6 mb-4">
                                 <div className="blog-item position-relative overflow-hidden rounded mb-2">
                                     <img className="img-fluid" src="img/blog-3.jpg" alt=""/>
                                     <a className="blog-overlay text-decoration-none" href="">
@@ -99,7 +99,7 @@ function Blog() {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-6 mb-4">
+                            <div className="col-md-8 col-lg-6 mb-4">
                                 <div className="blog-item position-relative overflow-hidden rounded mb-2">
                                     <img className="img-fluid" src="img/blog-1.jpg" alt=""/>
                                     <a className="blog-overlay text-decoration-none" href="">
@@ -108,7 +108,7 @@ function Blog() {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-6 mb-4">
+                            <div className="col-md-8 col-lg-6 mb-4">
                                 <div className="blog-item position-relative overflow-hidden rounded mb-2">
                                     <img className="img-fluid" src="img/blog-2.jpg" alt=""/>
                                     <a className="blog-overlay text-decoration-none" href="">
@@ -117,7 +117,7 @@ function Blog() {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-6 mb-4">
+                            <div className="col-md-8 col-lg-6 mb-4">
                                 <div className="blog-item position-relative overflow-hidden rounded mb-2">
                                     <img className="img-fluid" src="img/blog-3.jpg" alt=""/>
                                     <a className="blog-overlay text-decoration-none" href="">
@@ -126,7 +126,7 @@ function Blog() {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-12">
+                            {/* <div className="col-12">
                                 <nav aria-label="Page navigation">
                                     <ul className="pagination pagination-lg justify-content-center mb-0">
                                     <li className="page-item disabled">
@@ -146,7 +146,7 @@ function Blog() {
                                     </li>
                                     </ul>
                                 </nav>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

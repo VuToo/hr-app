@@ -11,6 +11,7 @@ import SecondService from "./pages/SecondService";
 import ThirdService from "./pages/ThirdService";
 import DetailJob from "./pages/DetailJob";
 import ApplyCv from "./pages/ApplyCv";
+import DetailBlog from "./pages/DetailBlog";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/about" element={<AboutUs/>} />
           <Route path="/search-job" element={<CarrerOpportunities/>} />
           <Route path="/news" element={<Blog/>} />
+          <Route path="/news/:title" element={<DetailBlog/>} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/uploadcv" element={<SubmitCV/>} />
           <Route path="/terms-of-use" element={<TermsOfUse/>} />
