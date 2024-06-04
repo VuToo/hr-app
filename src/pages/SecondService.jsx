@@ -33,7 +33,8 @@ function SecondService() {
                         </div>
                     </div>
                     <div className="col-lg-6 my-3">
-                        <img className="img-fluid rounded mb-4 mb-lg-0" src="../img/Talent-sourcing-1.jpg" alt=""/>
+                        {/* <img className="img-fluid rounded mb-4 mb-lg-0" src="../img/Talent-sourcing-1.jpg" alt=""/> */}
+                        <img className="img-fluid rounded mb-4 mb-lg-0" src="../img/blog-1.jpg" alt=""/>
                     </div>
                     <div className="col-lg-6 my-3">
                         <img className="img-fluid rounded mb-4 mb-lg-0" src="../img/Talent-sourcing-2.jpg" alt=""/>
