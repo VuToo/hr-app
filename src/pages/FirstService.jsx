@@ -57,9 +57,9 @@ function FirstService() {
                             <span>Extensive Network: Leveraging our vast network to connect with the best talent in the industry.</span>
                         </div>
                     </div>
-                    <div className="col-lg-12 my-3 text-justify">
+                    <div className="col-lg-12 mb-3 mt-5 text-center">
                         <h3>RECRUITMENT PROCESS</h3>
-                        
+                        <img className="img-fluid rounded mb-4 mb-lg-0" src="../img/RECRUITMENT-PROCESS.jpg" alt=""/>
                     </div>
 
                 </div>
