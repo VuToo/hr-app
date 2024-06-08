@@ -10,7 +10,6 @@ function JobList() {
             setJobList(res.data);
         })
     }
-    console.log(jobList);
     useEffect(()=>{
         getJobs();
     },[]);

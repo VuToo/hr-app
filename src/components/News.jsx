@@ -1,6 +1,19 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import SpinnerS from '../components/SpinnerS';
 
 function News() {
+    const [postList, setPostList] = useState([]);
+    const getPostList = async () =>{
+        await axios.get(`http://127.0.0.1:8000/api/getPostsOn`)
+        .then((res)=>{
+            setPostList(res.data);
+        })
+    }
+    console.log(postList);
+    useEffect(()=>{
+        getPostList();
+    },[])
     return (
     <>
         <div className="container-fluid py-3">
@@ -9,6 +22,49 @@ function News() {
                     <h5 className="text-primary text-uppercase mb-3" style={{letterSpacing: '5px'}}>News</h5>
                     <h1>NEWS</h1>
                 </div>
+                {
+                    postList && postList.length>0 &&
+                    <div className="row">
+                    {
+                        postList.map((item,index)=>(
+                        <div className="col-lg-4 col-md-6 mb-4" key={index}>
+                            <div className="cat-item position-relative overflow-hidden rounded">
+                                <img className="img-fluid" src={`http://127.0.0.1:8000/images/`+item.imageTitle+``} alt="" style={{ height: "230px" }}/>
+                            </div>
+                            <div className="bg-secondary p-4">
+                                <a className="h6" href={"/news/"+item.title}>{item.title}</a>
+                            </div>
+                        </div>
+                        ))    
+                    }
+                    </div>
+                }
+                {
+                    !postList || postList.length<=0 &&
+                    <div className="row">
+                        <div className="col-lg-4 col-md-6 mb-4">
+                            <div className="bg-secondary rounded p-4">
+                            {
+                                <SpinnerS/>
+                            }
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-6 mb-4">
+                            <div className="bg-secondary rounded p-4">
+                            {
+                                <SpinnerS/>
+                            }
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-6 mb-4">
+                            <div className="bg-secondary rounded p-4">
+                            {
+                                <SpinnerS/>
+                            }
+                            </div>
+                        </div>
+                    </div>
+                }
                 <div className="row">
                     <div className="col-lg-4 col-md-6 mb-4">
                         <div className="cat-item position-relative overflow-hidden rounded">
