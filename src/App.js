@@ -23,7 +23,7 @@ function App() {
           <Route path="/about" element={<AboutUs/>} />
           <Route path="/search-job" element={<CarrerOpportunities/>} />
           <Route path="/news" element={<Blog/>} />
-          <Route path="/news/:title" element={<DetailBlog/>} />
+          <Route path="/news/:id" element={<DetailBlog/>} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/uploadcv" element={<SubmitCV/>} />
           <Route path="/terms-of-use" element={<TermsOfUse/>} />
