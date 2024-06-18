@@ -30,7 +30,7 @@ function Blog() {
     }
     const [searchPosts, setSearchPosts] = useState([]);
     const getPostsSearch = async (e) => {
-        await axios.get(`http://127.0.0.1:8000/api/searchPosts?search=`+e+``)
+        await axios.get(`http://127.0.0.1:8000/api/searchPostsOn?search=`+e+``)
         .then((res)=>{
             setSearchPosts(res.data);
         })
