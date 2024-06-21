@@ -9,7 +9,7 @@ function Navbar() {
             <div className="row border-top px-xl-5">
                 <div className="col-lg-3 d-none d-lg-block">
                     <a className="d-flex align-items-center justify-content-between w-100 text-decoration-none" href="/" style={{height: '67px', padding: '0 30px'}}>
-                        {/* <h5 className="text-primary m-0"><i className="fa fa-book-open mr-2"></i>V-Talent Solution</h5> */}
+                        {/* <h5 className="text-primary m-0"><i className="fa fa-book-open mr-2"></i>V Talent Solution</h5> */}
                         {/* <i className="fa fa-angle-down text-primary"></i> */}
                         {/* <i className="fa fa-book-open mr-2"></i> */}
                         <img  className="img-fluid rounded  mx-auto d-block mb-lg-0" src="../img/vtalent2.png" alt="Logo" style={{ height: "100%", width: "100%" }}/>

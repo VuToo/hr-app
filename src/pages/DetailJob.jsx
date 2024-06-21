@@ -81,16 +81,36 @@ function DetailJob() {
                                     <p><b>Experience: </b></p>
                                 </div>
                             </div>
-
-                            <hr className="mx-3"/>
-
-                            <h3 className='m-3'>Job Description</h3>
-                            <div  className="m-3 row" dangerouslySetInnerHTML={{ __html: job.job_description }}></div>
-
-                            <hr className="mx-3"/>
-
-                            <h3 className='m-3'>Job Requirement</h3>
-                            <div  className="m-3 row" dangerouslySetInnerHTML={{ __html: job.job_description }}></div>
+                            {
+                                job.job_description == null ?
+                                ''
+                                :
+                                <div>
+                                    <hr className="mx-3"/>
+                                    <h3 className='m-3'>Job Description</h3>
+                                    <div  className="m-3 row" dangerouslySetInnerHTML={{ __html: job.job_description }}></div>
+                                </div>
+                            }
+                            {
+                                job.job_requirements  == null ?
+                                ''
+                                :
+                                <div>
+                                    <hr className="mx-3"/>
+                                    <h3 className='m-3'>Job Requirement</h3>
+                                    <div  className="m-3 row" dangerouslySetInnerHTML={{ __html: job.job_requirements }}></div>
+                                </div>
+                            }
+                            {
+                                job.job_benefits == null ?
+                                ''
+                                :
+                                <div>
+                                    <hr className="mx-3"/>
+                                    <h3 className='m-3'>Job Benefits</h3>
+                                    <div  className="m-3 row" dangerouslySetInnerHTML={{ __html: job.job_benefits }}></div>
+                                </div>
+                            }
                         </div>
                         <div>
                             <a href={"/apply-cv/"+id} className="btn btn-primary w-100 mt-3 mb-5">Apply</a>

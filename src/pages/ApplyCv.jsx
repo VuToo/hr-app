@@ -149,7 +149,7 @@ function ApplyCv() {
                                 <ol>
                                     <li>In order to attract Employers to see CV soon, Candidates should choose to apply by CV Online & write your expectations in the cover letter.</li>
                                     <li>Please carefully review the job and company information in the "Company Information" display at each vacancy before applying.</li>
-                                    <li>For the best experience, it is recommended to use popular browsers such as Google Chrome or Firefox to access the website https://v-talent.com.</li>
+                                    <li>For the best experience, it is recommended to use popular browsers such as Google Chrome or Firefox to access the website <a href="https://vtalentsolution.com/">https://vtalentsolution.com</a></li>
                                 </ol>
                             </div>
                         </div>
@@ -197,14 +197,14 @@ function ApplyCv() {
                                 <div className="control-group">
                                     <label className='ml-2'  htmlFor="apcept-policy">
                                         <input className="mr-2" type="checkbox" required="required" id='apcept-policy' onChange={()=>setChecked(1)} data-validation-required-message="Please checked"/>
-                                        I have read and agree to the <a href="/terms-of-use" target='_blank'>Terms of Use</a> and <a href="/terms-of-use" target='_blank'>Privacy Statement</a> of V-Talent Solution.
+                                        I have read and agree to the <a href="/terms-of-use" target='_blank'>Terms of Use</a> and <a href="/terms-of-use" target='_blank'>Privacy Statement</a> of V Talent Solution.
                                     </label>
                                 </div>
                                 :
                                 <div className="control-group">
                                     <label className='ml-2'  htmlFor="apcept-policy">
                                         <input className="mr-2" type="checkbox" required="required" id='apcept-policy' onChange={()=>setChecked(0)} data-validation-required-message="Please checked"/>
-                                        I have read and agree to the <a href="/terms-of-use" target='_blank'>Terms of Use</a> and <a href="/terms-of-use" target='_blank'>Privacy Statement</a> of V-Talent Solution.
+                                        I have read and agree to the <a href="/terms-of-use" target='_blank'>Terms of Use</a> and <a href="/terms-of-use" target='_blank'>Privacy Statement</a> of V Talent Solution.
                                     </label>
                                 </div>
                             }

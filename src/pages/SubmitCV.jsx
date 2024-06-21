@@ -242,14 +242,14 @@ function SubmitCV() {
                                             <div className="control-group">
                                                 <label className='ml-2'  htmlFor="apcept-policy">
                                                     <input className="mr-2" type="checkbox" required="required" id='apcept-policy' onChange={()=>setChecked(1)} data-validation-required-message="Please checked"/>
-                                                    I have read and agree to the <a href="/terms-of-use" target='_blank'>Terms of Use</a> and <a href="/terms-of-use" target='_blank'>Privacy Statement</a> of V-Talent Solution.
+                                                    I have read and agree to the <a href="/terms-of-use" target='_blank'>Terms of Use</a> and <a href="/terms-of-use" target='_blank'>Privacy Statement</a> of V Talent Solution.
                                                 </label>
                                             </div>
                                             :
                                             <div className="control-group">
                                                 <label className='ml-2'  htmlFor="apcept-policy">
                                                     <input className="mr-2" type="checkbox" required="required" id='apcept-policy' onChange={()=>setChecked(0)} data-validation-required-message="Please checked"/>
-                                                    I have read and agree to the <a href="/terms-of-use" target='_blank'>Terms of Use</a> and <a href="/terms-of-use" target='_blank'>Privacy Statement</a> of V-Talent Solution.
+                                                    I have read and agree to the <a href="/terms-of-use" target='_blank'>Terms of Use</a> and <a href="/terms-of-use" target='_blank'>Privacy Statement</a> of V Talent Solution.
                                                 </label>
                                             </div>
                                         }

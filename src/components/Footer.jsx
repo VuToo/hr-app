@@ -35,7 +35,7 @@ function Footer() {
             </div> */}
             <div className="row justify-content-between">
                 <div className="col-12 col-md-3">
-                    {/* <h3 className='text-white bolder'>V-Talent Solution</h3> */}
+                    {/* <h3 className='text-white bolder'>V Talent Solution</h3> */}
                     <p><i className="fa fa-map-marker-alt text-primary mr-3"></i><small>No. 20, Street 8, Ward 11, Go Vap District, Ho Chi Minh City</small></p>
                     <p><i className="fa fa-envelope text-primary mr-3"></i><small>info@vtalentsolution.com</small></p>
                     <p><i className="fa fa-phone text-primary mr-3"></i><small>+84382 068 609</small></p>
